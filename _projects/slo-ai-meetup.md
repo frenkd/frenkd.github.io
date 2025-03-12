@@ -10,7 +10,7 @@ tags:
   - Community
   - Events
   - Knowledge Sharing
-website: https://slovenia.ai
+website: https://www.eventbrite.com/o/104538676951
 ---
 
 # Slovenia AI Meetup

@@ -10,7 +10,7 @@ tags:
   - AI
   - Education
   - Startup
-website: https://epistemy.ai
+website: https://epistemy.io
 ---
 
 # Epistemy
