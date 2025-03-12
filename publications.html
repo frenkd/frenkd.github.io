@@ -9,14 +9,15 @@ description: Articles, Podcasts, and Media Appearances
 
   <!-- Substack Blog -->
   {% if site.substack_url %}
-  <div class="mb-16">
-    <h2 class="text-2xl font-bold mb-6">Blog</h2>
-    <div class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-semibold mb-4">Subscribe to My Newsletter</h3>
-      <p class="text-gray-600 mb-4">Get the latest updates on AI, EdTech, and technology trends directly in your inbox.</p>
-      <a href="{{ site.substack_url }}" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-        Subscribe on Substack
-      </a>
+  <div class="mb-16" id="substack-feed" data-substack-url="{{ site.substack_url }}">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold">Blog Posts</h2>
+      <a href="{{ site.substack_url }}" class="text-blue-600 hover:underline" target="_blank">Subscribe on Substack →</a>
+    </div>
+    <div id="substack-posts" class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-md col-span-2 flex justify-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      </div>
     </div>
   </div>
   {% endif %}
@@ -98,4 +99,7 @@ description: Articles, Podcasts, and Media Appearances
       {% endif %}
     </div>
   </div>
-</div> 
+</div>
+
+<!-- Substack Feed Script -->
+<script src="/assets/js/substack-feed.js"></script> 
