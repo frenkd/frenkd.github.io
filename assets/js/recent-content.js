@@ -45,6 +45,19 @@ document.addEventListener('DOMContentLoaded', function() {
         recentItems.forEach(item => {
             const clone = item.element.cloneNode(true);
             clone.style.display = 'block';
+            
+            // Fix appearance links to use external URLs if available
+            if (clone.getAttribute('data-type') === 'appearance') {
+                const externalUrl = clone.getAttribute('data-url');
+                if (externalUrl) {
+                    const linkElement = clone.querySelector('a');
+                    if (linkElement) {
+                        linkElement.setAttribute('href', externalUrl);
+                        linkElement.setAttribute('target', '_blank');
+                    }
+                }
+            }
+            
             recentContentItems.appendChild(clone);
         });
         

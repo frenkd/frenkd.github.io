@@ -84,7 +84,7 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
         {% for appearance in recent_appearances %}
         {% assign event_date = appearance.date | date: '%s' %}
         {% assign current_date = site.time | date: '%s' %}
-        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-type="appearance">
+        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-type="appearance" data-url="{{ appearance.url }}">
           <div class="flex justify-between items-start mb-1">
             <span class="text-sm text-gray-500">Appearance • {{ appearance.date | date: "%B %d, %Y" }}</span>
             {% if event_date > current_date %}
@@ -92,7 +92,7 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
             {% endif %}
           </div>
           <h3 class="font-semibold text-lg mb-2">{{ appearance.title | truncate: 60 }}</h3>
-          <a href="/appearances/{{ appearance.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">Learn more →</a>
+          <a href="{{ appearance.url }}" target="_blank" class="text-blue-600 text-sm inline-block hover:underline">Learn more →</a>
         </div>
         {% endfor %}
       </div>

@@ -4,7 +4,7 @@ date: 2025-03-27
 description: "Predavanje prikazuje pot od študentskega dela na IJS in tekmovanju na Evropskih hackathonih, do študija AI na Nizozemskem in raziskovalnega obiska na UC Berkeley v Kaliforniji."
 location: "Ljubljana, Slovenia"
 organization: "Forum podatkovne analitike"
-url: "https://www.planetgv.si/forum-podatkovne-analitike/"
+url: "https://www.planetgv.si/forum-podatkovne-analitike/mag-frenk-dragar/"
 ---
 
 # Od študenta do startupa - Forum podatkovne analitike
