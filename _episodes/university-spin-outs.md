@@ -7,9 +7,9 @@ duration: "50:43"
 description: "In this episode we talk about University Spin-Outs. How is it different from a 'classic' start-up? What is the process of founding a university spin-out in Slovenia?"
 image: "/assets/images/episodes/ep28-university-spinouts.jpg"
 links:
-  buzzsprout: "https://www.buzzsprout.com/1434360/episode-28"
-  spotify: "https://open.spotify.com/episode/28"
-  apple: "https://podcasts.apple.com/podcast/asef/episode-28"
+  buzzsprout: "https://www.buzzsprout.com/1753090/episodes/14485674-episode-28-tech-business-university-spin-outs"
+  spotify: "https://open.spotify.com/episode/5jyh6vhzxCjqXDSz2hXUjO"
+  apple: "https://podcasts.apple.com/us/podcast/episode-28-tech-business-university-spin-outs/id1736912874?i=1000649836799"
 ---
 
 In this episode we talk about University Spin-Outs. How is it different from a "classic" start-up? What is the process of founding a university spin-out in Slovenia?

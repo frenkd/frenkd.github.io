@@ -12,19 +12,83 @@ document.addEventListener('DOMContentLoaded', function() {
     // Parse the dates and store the static items with their dates
     const contentItems = staticContentItems.map(item => {
         const dateStr = item.getAttribute('data-date');
+        const itemType = item.getAttribute('data-type') || '';
+        
         return {
             element: item,
             date: new Date(dateStr),
-            type: 'static'
+            type: 'static',
+            contentType: itemType
         };
     });
     
     // Clone the static items before removing them
-    const staticItemsClone = contentItems.map(item => ({
-        element: item.element.cloneNode(true),
-        date: item.date,
-        type: 'static'
-    }));
+    const staticItemsClone = contentItems.map(item => {
+        const clonedElement = item.element.cloneNode(true);
+        
+        // Fix any appearance links that might be broken
+        const linkElement = clonedElement.querySelector('a');
+        if (linkElement && linkElement.textContent.includes('Learn more')) {
+            // Extract title from the heading element
+            const titleElement = clonedElement.querySelector('h3');
+            if (titleElement) {
+                const title = titleElement.textContent.trim();
+                // Create a slug from the title
+                const slug = slugify(title);
+                // Set the correct link
+                linkElement.setAttribute('href', `/appearances/${slug}`);
+            }
+        }
+        
+        // For appearances, check if we need to add the upcoming tag
+        if (item.contentType === 'appearance') {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time part for proper comparison
+            
+            // If the event date is in the future, ensure it has an upcoming tag
+            if (item.date > today) {
+                // Check if there's already an upcoming tag
+                let hasUpcomingTag = false;
+                const spans = clonedElement.querySelectorAll('span');
+                for (const span of spans) {
+                    if (span.textContent.includes('Upcoming')) {
+                        hasUpcomingTag = true;
+                        break;
+                    }
+                }
+                
+                // If no upcoming tag exists, add one
+                if (!hasUpcomingTag) {
+                    const dateSpan = clonedElement.querySelector('span');
+                    if (dateSpan) {
+                        const parentDiv = dateSpan.parentNode;
+                        if (!parentDiv.classList.contains('flex')) {
+                            // Create a flex container for date and upcoming tag
+                            const flexContainer = document.createElement('div');
+                            flexContainer.className = 'flex justify-between items-start';
+                            
+                            // Move the date span into the container
+                            dateSpan.parentNode.insertBefore(flexContainer, dateSpan);
+                            flexContainer.appendChild(dateSpan);
+                            
+                            // Add upcoming tag
+                            const upcomingTag = document.createElement('span');
+                            upcomingTag.className = 'px-2 py-1 bg-green-100 text-green-800 text-xs rounded';
+                            upcomingTag.textContent = 'Upcoming';
+                            flexContainer.appendChild(upcomingTag);
+                        }
+                    }
+                }
+            }
+        }
+        
+        return {
+            element: clonedElement,
+            date: item.date,
+            type: 'static',
+            contentType: item.contentType
+        };
+    });
     
     // Clear current items
     while (recentContentItems.firstChild) {
@@ -67,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         return {
                             element: postElement,
                             date: postDate,
-                            type: 'blog'
+                            type: 'blog',
+                            contentType: 'blog'
                         };
                     });
                     
@@ -138,5 +203,17 @@ document.addEventListener('DOMContentLoaded', function() {
         viewAllContainer.className = 'text-right mt-4';
         viewAllContainer.innerHTML = '<a href="/publications" class="text-blue-600 text-sm font-semibold">View all content →</a>';
         recentContentItems.appendChild(viewAllContainer);
+    }
+    
+    // Function to convert a string to a slug (similar to Jekyll's slugify filter)
+    function slugify(text) {
+        return text
+            .toString()
+            .toLowerCase()
+            .replace(/\s+/g, '-')           // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+            .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+            .replace(/^-+/, '')             // Trim - from start of text
+            .replace(/-+$/, '');            // Trim - from end of text
     }
 }); 

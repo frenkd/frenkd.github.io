@@ -7,9 +7,9 @@ duration: "01:23:46"
 description: "In this episode, we dive into another part of the technology transfer and entrepreneurship ecosystem - venture capital (VC) and business angels. We discuss the different VC funds in Slovenia, how startups should approach funding, opportunities and challenges in the local area, as well as success stories in the region, and perspectives abroad."
 image: "/assets/images/episodes/ep29-venture-capital.jpg"
 links:
-  buzzsprout: "https://www.buzzsprout.com/1434360/episode-29"
-  spotify: "https://open.spotify.com/episode/29"
-  apple: "https://podcasts.apple.com/podcast/asef/episode-29"
+  buzzsprout: "https://www.buzzsprout.com/1753090/episodes/14862354-episode-29-venture-capital-in-slovenia"
+  spotify: "https://open.spotify.com/episode/7AlzySZVPQzMfNLjlZ37fL?si=GVxi9vl2SkOJovtBBU-aAQ"
+  apple: "https://podcasts.apple.com/us/podcast/episode-29-venture-capital-in-slovenia/id1736912874?i=1000652106132"
 ---
 
 In this episode, we dive into another part of the technology transfer and entrepreneurship ecosystem - venture capital (VC) and business angels. We discuss the different VC funds in Slovenia, how startups should approach funding, opportunities and challenges in the local area, as well as success stories in the region, and perspectives abroad. We host three experts from the Slovenian venture capital scene:

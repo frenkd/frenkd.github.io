@@ -7,9 +7,9 @@ duration: "52:08"
 description: "In this special live episode of the ASEF Podcast, recorded at Dragon Days in Celje, we hosted Michael Stucky - a partner at Serpentine Ventures, visiting from Zurich, Switzerland, and Jure Vindišar - Head of Technology Transfer at the National Institute of Biology in Slovenia."
 image: "/assets/images/episodes/ep33-tech-transfer.jpg"
 links:
-  buzzsprout: "https://www.buzzsprout.com/1434360/episode-33"
-  spotify: "https://open.spotify.com/episode/33"
-  apple: "https://podcasts.apple.com/podcast/asef/episode-33"
+  buzzsprout: "https://www.buzzsprout.com/1753090/episodes/15793865-episode-33-technology-transfer"
+  spotify: "https://open.spotify.com/episode/1rttG8SWkr1aBoK8vJ8AkQ?si=oJBtQRjxTTy9c7xf3gehKQ"
+  apple: "https://podcasts.apple.com/us/podcast/episode-33-technology-transfer/id1736912874?i=1000670300170"
 ---
 
 In this special live episode of the ASEF Podcast, recorded at Dragon Days in Celje, we hosted Michael Stucky - a partner at Serpentine Ventures, visiting from Zurich, Switzerland, and Jure Vindišar - Head of Technology Transfer at the National Institute of Biology in Slovenia.

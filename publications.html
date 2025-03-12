@@ -59,11 +59,11 @@ description: Articles, Podcasts, and Media Appearances
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-bold">ASEF Podcast</h2>
       <div class="flex space-x-2">
-        <a href="https://www.buzzsprout.com/1434360" target="_blank" class="text-blue-600 hover:underline">Buzzsprout</a>
+        <a href="https://www.buzzsprout.com/1753090" target="_blank" class="text-blue-600 hover:underline">Buzzsprout</a>
         <span class="text-gray-400">•</span>
-        <a href="https://open.spotify.com/show/asef" target="_blank" class="text-green-600 hover:underline">Spotify</a>
+        <a href="https://open.spotify.com/show/2Qg8QhrYIlgxDFfmbe2Sj0" target="_blank" class="text-green-600 hover:underline">Spotify</a>
         <span class="text-gray-400">•</span>
-        <a href="https://podcasts.apple.com/podcast/asef" target="_blank" class="text-purple-600 hover:underline">Apple Podcasts</a>
+        <a href="https://podcasts.apple.com/en/podcast/asef-podcast/id1736912874" target="_blank" class="text-purple-600 hover:underline">Apple Podcasts</a>
       </div>
     </div>
     <div class="space-y-6">
@@ -71,17 +71,10 @@ description: Articles, Podcasts, and Media Appearances
         {% assign sorted_episodes = site.episodes | sort: "date" | reverse %}
         {% for episode in sorted_episodes %}
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="flex flex-col md:flex-row items-start mb-4">
-            {% if episode.image %}
-            <img src="{{ episode.image }}" alt="{{ episode.title }}" class="w-24 h-24 object-cover rounded-lg mr-4 mb-4 md:mb-0">
-            {% else %}
-            <div class="w-24 h-24 bg-gray-200 rounded-lg mr-4 mb-4 md:mb-0"></div>
-            {% endif %}
-            <div class="flex-grow">
-              <h3 class="text-xl font-semibold">{{ episode.title }}</h3>
-              <p class="text-gray-500">Season {{ episode.season }} • Episode {{ episode.episode_number }} • {{ episode.date | date: "%B %d, %Y" }}</p>
-              <p class="text-gray-600 mt-2">{{ episode.description }}</p>
-            </div>
+          <div class="mb-4">
+            <h3 class="text-xl font-semibold">{{ episode.title }}</h3>
+            <p class="text-gray-500">Season {{ episode.season }} • Episode {{ episode.episode_number }} • {{ episode.date | date: "%B %d, %Y" }}</p>
+            <p class="text-gray-600 mt-2">{{ episode.description }}</p>
           </div>
           <div class="flex flex-wrap gap-3 mt-4">
             <a href="{{ episode.url }}" class="text-blue-600 hover:underline">Show notes →</a>
