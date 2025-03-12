@@ -77,9 +77,9 @@ description: Articles, Podcasts, and Media Appearances
             <p class="text-gray-600 mt-2">{{ episode.description }}</p>
           </div>
           <div class="flex flex-wrap gap-3 mt-4">
-            <a href="{{ episode.url }}" class="text-blue-600 hover:underline">Show notes →</a>
+            <!-- <a href="{{ episode.url }}" class="text-blue-600 hover:underline">Show notes →</a> -->
             {% if episode.links.buzzsprout %}
-            <span class="text-gray-400">•</span>
+            <!-- <span class="text-gray-400">•</span> -->
             <a href="{{ episode.links.buzzsprout }}" target="_blank" class="text-blue-600 hover:underline">Buzzsprout</a>
             {% endif %}
             {% if episode.links.spotify %}
