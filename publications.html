@@ -22,6 +22,21 @@ description: Articles, Podcasts, and Media Appearances
   </div>
   {% endif %}
 
+  <!-- YouTube Videos -->
+  {% if site.youtube_channel_id %}
+  <div class="mb-16" id="youtube-feed" data-channel-id="{{ site.youtube_channel_id }}">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold">YouTube Videos</h2>
+      <a href="https://www.youtube.com/channel/{{ site.youtube_channel_id }}" class="text-red-600 hover:underline" target="_blank">Subscribe on YouTube →</a>
+    </div>
+    <div id="youtube-videos" class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-md col-span-2 flex justify-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-red-500"></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
   <!-- Finance Publications -->
   <div class="mb-16">
     <h2 class="text-2xl font-bold mb-6">Writing for Finance Magazine</h2>
@@ -103,4 +118,6 @@ description: Articles, Podcasts, and Media Appearances
 </div>
 
 <!-- Substack Feed Script -->
-<script src="/assets/js/substack-feed.js"></script> 
+<script src="/assets/js/substack-feed.js"></script>
+<!-- YouTube Feed Script -->
+<script src="/assets/js/youtube-feed.js"></script> 

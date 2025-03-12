@@ -65,3 +65,6 @@ exclude:
 
 # Substack settings
 substack_url: "https://dragarfrenk.substack.com"
+
+# YouTube settings
+youtube_channel_id: "UCT1OpfSOOaLQ3QD-dI8ATjA"
