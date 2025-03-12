@@ -33,31 +33,40 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
     </div>
 
     <!-- Recent Content -->
-    <div class="col-span-1">
-      <h2 class="text-2xl font-bold mb-6">Recent Content</h2>
-      <div class="space-y-4">
-        {% assign recent_publications = site.publications | sort: "date" | reverse | limit: 2 %}
+    <div class="col-span-1" id="recent-content" data-substack-url="{{ site.substack_url }}">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">Recent Content</h2>
+      </div>
+      
+      <!-- Loading spinner -->
+      <div id="recent-content-loading" class="bg-white p-4 rounded-lg shadow-md flex justify-center mb-4">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+      </div>
+      
+      <div id="recent-content-items" class="space-y-4">
+        <!-- Initial static content items that will be dynamically reordered and filtered -->
+        {% assign recent_publications = site.publications | sort: "date" | reverse %}
         {% for pub in recent_publications %}
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <span class="text-sm text-gray-500">{{ pub.publication }}</span>
+        <div class="bg-white p-4 rounded-lg shadow-md content-item" data-date="{{ pub.date | date_to_xmlschema }}">
+          <span class="text-sm text-gray-500">{{ pub.publication }} • {{ pub.date | date: "%B %d, %Y" }}</span>
           <h3 class="font-semibold mt-1">{{ pub.title | truncate: 60 }}</h3>
-          <a href="{{ pub.url }}" class="text-blue-600 text-sm">Read more →</a>
+          <a href="{{ pub.url }}" class="text-blue-600 text-sm">Read article →</a>
         </div>
         {% endfor %}
         
-        {% assign recent_episodes = site.episodes | sort: "date" | reverse | limit: 1 %}
+        {% assign recent_episodes = site.episodes | sort: "date" | reverse %}
         {% for episode in recent_episodes %}
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <span class="text-sm text-gray-500">ASEF Podcast</span>
+        <div class="bg-white p-4 rounded-lg shadow-md content-item" data-date="{{ episode.date | date_to_xmlschema }}">
+          <span class="text-sm text-gray-500">ASEF Podcast • {{ episode.date | date: "%B %d, %Y" }}</span>
           <h3 class="font-semibold mt-1">{{ episode.title | truncate: 60 }}</h3>
           <a href="{{ episode.url }}" class="text-blue-600 text-sm">Listen →</a>
         </div>
         {% endfor %}
         
-        {% assign recent_appearances = site.appearances | sort: "date" | reverse | limit: 1 %}
+        {% assign recent_appearances = site.appearances | sort: "date" | reverse %}
         {% for appearance in recent_appearances %}
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <span class="text-sm text-gray-500">Appearance</span>
+        <div class="bg-white p-4 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}">
+          <span class="text-sm text-gray-500">Appearance • {{ appearance.date | date: "%B %d, %Y" }}</span>
           <h3 class="font-semibold mt-1">{{ appearance.title | truncate: 60 }}</h3>
           <a href="{{ appearance.url }}" class="text-blue-600 text-sm">Learn more →</a>
         </div>
@@ -65,4 +74,7 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
       </div>
     </div>
   </div>
-</div> 
+</div>
+
+<!-- Recent Content Script -->
+<script src="/assets/js/recent-content.js"></script> 
