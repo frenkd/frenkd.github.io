@@ -1,59 +1,101 @@
 ---
 layout: default
 title: Publications
-description: My research papers, articles, and other publications
+description: Articles, Podcasts, and Media Appearances
 ---
 
-<div class="space-y-8">
-    <header class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Publications</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">My research papers, articles, and other publications.</p>
-    </header>
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-8">Publications</h1>
 
-    <div class="space-y-6">
-        {% for publication in site.publications %}
-        <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
-            <h2 class="text-xl font-semibold text-gray-900 mb-2">
-                <a href="{{ publication.url }}" class="hover:text-primary">{{ publication.title }}</a>
-            </h2>
-            <p class="text-gray-600 mb-4">{{ publication.description }}</p>
-            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                {% if publication.authors %}
-                <p>
-                    <span class="font-medium">Authors:</span>
-                    {{ publication.authors | join: ", " }}
-                </p>
-                {% endif %}
-                {% if publication.publication %}
-                <p>
-                    <span class="font-medium">Published in:</span>
-                    {{ publication.publication }}
-                </p>
-                {% endif %}
-                {% if publication.date %}
-                <p>
-                    <span class="font-medium">Date:</span>
-                    {{ publication.date | date: "%B %Y" }}
-                </p>
-                {% endif %}
-            </div>
-            {% if publication.doi or publication.url %}
-            <div class="mt-4">
-                {% if publication.doi %}
-                <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener" class="inline-flex items-center text-primary hover:text-primary-dark mr-4">
-                    <span>View on DOI</span>
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
-                {% endif %}
-                {% if publication.url %}
-                <a href="{{ publication.url }}" class="inline-flex items-center text-primary hover:text-primary-dark">
-                    <span>Read More</span>
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
-                {% endif %}
-            </div>
-            {% endif %}
-        </article>
-        {% endfor %}
+  <!-- Substack Blog -->
+  {% if site.substack_url %}
+  <div class="mb-16">
+    <h2 class="text-2xl font-bold mb-6">Blog</h2>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-4">Subscribe to My Newsletter</h3>
+      <p class="text-gray-600 mb-4">Get the latest updates on AI, EdTech, and technology trends directly in your inbox.</p>
+      <a href="{{ site.substack_url }}" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+        Subscribe on Substack
+      </a>
     </div>
+  </div>
+  {% endif %}
+
+  <!-- Finance Magazine Articles -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-bold mb-6">Finance Magazine</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {% assign finance_articles = site.publications | where: "category", "finance" %}
+      {% if finance_articles.size > 0 %}
+        {% assign sorted_articles = finance_articles | sort: "date" | reverse %}
+        {% for article in sorted_articles %}
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <span class="text-sm text-gray-500">{{ article.date | date: "%B %d, %Y" }}</span>
+          <h3 class="text-xl font-semibold my-2">{{ article.title }}</h3>
+          <p class="text-gray-600 mb-4">{{ article.description }}</p>
+          <a href="{{ article.url }}" class="text-blue-600">Read article →</a>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="bg-white p-6 rounded-lg shadow-md col-span-2">
+          <p class="text-gray-600">No articles available yet. Check back soon!</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- ASEF Podcast -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-bold mb-6">ASEF Podcast</h2>
+    <div class="space-y-6">
+      {% if site.episodes.size > 0 %}
+        {% assign sorted_episodes = site.episodes | sort: "date" | reverse %}
+        {% for episode in sorted_episodes %}
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            {% if episode.image %}
+            <img src="{{ episode.image }}" alt="{{ episode.title }}" class="w-16 h-16 object-cover rounded-lg mr-4">
+            {% else %}
+            <div class="w-16 h-16 bg-gray-200 rounded-lg mr-4"></div>
+            {% endif %}
+            <div>
+              <h3 class="text-xl font-semibold">{{ episode.title }}</h3>
+              <p class="text-gray-500">{{ episode.date | date: "%B %d, %Y" }}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">{{ episode.description }}</p>
+          <a href="{{ episode.url }}" class="text-blue-600">Listen to episode →</a>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600">No episodes available yet. Check back soon!</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Media Appearances -->
+  <div>
+    <h2 class="text-2xl font-bold mb-6">Media Appearances</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% if site.appearances.size > 0 %}
+        {% assign sorted_appearances = site.appearances | sort: "date" | reverse %}
+        {% for appearance in sorted_appearances %}
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">{{ appearance.title }}</h3>
+          <p class="text-gray-500 mb-2">{{ appearance.date | date: "%B %Y" }}</p>
+          <p class="text-gray-600">{{ appearance.description }}</p>
+          {% if appearance.url %}
+          <a href="{{ appearance.url }}" class="text-blue-600 mt-4 inline-block">Learn more →</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="bg-white p-6 rounded-lg shadow-md col-span-3">
+          <p class="text-gray-600">No appearances available yet. Check back soon!</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
 </div> 

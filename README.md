@@ -1,147 +1,129 @@
-# Portfolio Website
+# Frenk Dragar - Personal Website
 
-A modern, minimal portfolio website built with Jekyll and TailwindCSS, designed to be hosted on GitHub Pages.
+This is the source code for my personal website, built with Jekyll.
 
-## Features
+## Setup Instructions
 
-- Fully static and fast
-- Responsive design with TailwindCSS
-- Markdown-based content management
-- Sections for Projects, Publications, and Appearances
-- Blog support with optional Substack integration
-- SEO-friendly with meta tags and OpenGraph support
-- GitHub Pages ready with automated deployment
+### Prerequisites
 
-## Directory Structure
+- Ruby (version 2.6.0 or higher)
+- RubyGems
+- Bundler
+- Jekyll
 
-```
-.
-├── _appearances/    # Appearance posts
-├── _layouts/       # Layout templates
-├── _posts/         # Blog posts
-├── _projects/      # Project posts
-├── _publications/  # Publication posts
-├── assets/         # Static assets
-│   ├── images/     # Images and graphics
-│   └── css/        # Custom CSS (if needed)
-├── _config.yml     # Jekyll configuration
-├── Gemfile        # Ruby dependencies
-└── *.html         # Main pages
-```
-
-## Setup
+### Local Development
 
 1. Clone this repository:
-   ```bash
-   git clone https://github.com/frenkd/portfolio.git
-   cd portfolio
+   ```
+   git clone https://github.com/frenkd/frenkd.github.io.git
+   cd frenkd.github.io
    ```
 
 2. Install dependencies:
-   ```bash
+   ```
    bundle install
    ```
 
-3. Update `_config.yml`:
-   - Set your site's title and description
-   - Update the URL and baseURL
-   - Customize other settings as needed
-
-4. Start the development server:
-   ```bash
+3. Run the development server:
+   ```
    bundle exec jekyll serve
    ```
 
-5. Visit `http://localhost:4000` to see your site.
+4. Open your browser and visit: `http://localhost:4000`
 
-## Adding Content
+### Working with x86_64 Ruby on Apple Silicon
+
+If you're using an Apple Silicon Mac and encounter compatibility issues, use Rosetta:
+
+```bash
+arch -arch x86_64 bundle install
+arch -arch x86_64 bundle exec jekyll serve
+```
+
+Alternatively, use the included Makefile:
+
+```bash
+make install  # Install dependencies
+make serve    # Run the development server
+```
+
+## Managing Content
 
 ### Projects
 
-Create a new file in `_projects/` with the following format:
+Add new projects by creating Markdown files in the `_projects` directory with the following front matter:
 
-```markdown
+```yaml
 ---
-layout: project
 title: Project Name
-description: Brief description
-image: /assets/images/projects/image.jpg
-technologies:
-  - Tech1
-  - Tech2
-github: https://github.com/...
-demo: https://demo.example.com
-date: YYYY-MM-DD
+role: Your Role
+status: current  # or past
+order: 1  # for ordering current projects
+start_date: 2023-01-01  # for past projects
+end_date: 2023-12-31    # for past projects
+description: Brief description of the project
+tags:
+  - Tag1
+  - Tag2
 ---
-
-Project content in Markdown...
 ```
 
 ### Publications
 
-Create a new file in `_publications/` with:
+Add new publications in the `_publications` directory:
 
-```markdown
+```yaml
 ---
-layout: publication
-title: Publication Title
-description: Brief description
-authors:
-  - Author 1
-  - Author 2
-publication: Journal Name
-doi: DOI number
-date: YYYY-MM-DD
+title: "Publication Title"
+date: 2024-01-01
+category: finance  # or other category
+publication: Publication Name
+description: "Brief description"
+external_url: https://example.com/publication
 ---
+```
 
-Publication content in Markdown...
+### Podcast Episodes
+
+Add new episodes in the `_episodes` directory:
+
+```yaml
+---
+title: "Episode Title"
+date: 2024-01-01
+description: "Brief description"
+image: /path/to/image.jpg
+duration: "45:00"
+episode_number: 1
+spotify_url: https://spotify.com/...
+apple_podcasts_url: https://apple.com/...
+---
 ```
 
 ### Appearances
 
-Create a new file in `_appearances/` with:
+Add new appearances in the `_appearances` directory:
 
-```markdown
+```yaml
 ---
-layout: appearance
-title: Appearance Title
-description: Brief description
-type: talk/podcast/interview
-event: Event Name
-location: Location
-date: YYYY-MM-DD
-video_url: https://...
-slides_url: https://...
+title: "Appearance Name"
+date: 2024-01-01
+description: "Brief description"
+location: "Location"
+url: "https://example.com/event"
 ---
-
-Appearance content in Markdown...
 ```
 
-## Deployment
+## Customization
 
-This site is configured to automatically deploy to GitHub Pages when you push to the main branch. To set it up:
+- Edit `_config.yml` to change site-wide settings
+- Modify files in `_layouts` to change the site structure
+- Update styles in `assets/css/main.css`
 
-1. Go to your repository settings
-2. Navigate to "Pages"
-3. Set the source to "GitHub Actions"
-4. Push to the main branch to trigger deployment
+## Substack Integration
 
-## Custom Domain
+The site integrates with Substack for blog content. Update the Substack URL in `_config.yml`:
 
-To use a custom domain:
-
-1. Add your domain in the repository settings under "Pages"
-2. Create a `CNAME` file in the root directory with your domain
-3. Update your DNS settings according to GitHub's documentation
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE). 
+```yaml
+substack_url: "https://yourname.substack.com"
+``` 

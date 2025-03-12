@@ -1,0 +1,33 @@
+/* Custom styles beyond Tailwind */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Link hover effects */
+a:not(.no-underline):hover {
+  text-decoration: underline;
+}
+
+/* Card hover effects */
+.shadow-md {
+  transition: all 0.2s ease-in-out;
+}
+
+.shadow-md:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom container width for larger screens */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1140px;
+  }
+} 

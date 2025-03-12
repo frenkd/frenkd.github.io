@@ -1,10 +1,13 @@
-title: Your Portfolio
-description: A professional portfolio showcasing projects, publications, and appearances
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+title: Frenk Dragar
+description: AI Engineer & Tech Writer | Bringing AI into EdTech
+url: https://frenkd.github.io
+author: Frenk Dragar
+github_username: frenkd
+linkedin_username: frenk-dragar
 
 # Build settings
 markdown: kramdown
+permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -12,42 +15,41 @@ plugins:
 
 # Collections
 collections:
-  projects:
+  episodes:
     output: true
-    permalink: /projects/:path/
-  publications:
-    output: true
-    permalink: /publications/:path/
+    permalink: /episodes/:title/
   appearances:
     output: true
-    permalink: /appearances/:path/
+    permalink: /appearances/:title/
+  publications:
+    output: true
+    permalink: /publications/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
 
-# Default front matter
+# Collection defaults
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "episodes"
     values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-  - scope:
-      path: ""
-      type: "publications"
-    values:
-      layout: "publication"
+      layout: default
   - scope:
       path: ""
       type: "appearances"
     values:
-      layout: "appearance"
+      layout: default
   - scope:
       path: ""
+      type: "publications"
     values:
-      layout: "default"
+      layout: default
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: default
 
 # Exclude from processing
 exclude:
@@ -58,4 +60,7 @@ exclude:
   - Gemfile.lock
   - node_modules/
   - vendor/
-  - README.md 
+  - README.md
+
+# Substack settings
+substack_url: "https://dragarfrenk.substack.com"
