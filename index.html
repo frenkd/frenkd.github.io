@@ -9,10 +9,10 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
   <div class="flex flex-col md:flex-row items-center mb-16">
     <div class="md:w-2/3">
       <h1 class="text-4xl font-bold mb-4">Frenk Dragar</h1>
-      <p class="text-xl mb-6">Bringing AI into EdTech</p>
+      <p class="text-xl mb-6">Bringing AI into EdTech | MSc Artificial Intelligence @ Utrecht University</p>
       <p class="text-gray-600 mb-8">
-        Co-founder & CTO at Epistemy, focused on creating impactful educational digital products with an emphasis on AI and data.
-        Currently based in Ljubljana, Slovenia.
+        Co-founder & CTO at Epistemy, focused on creating impactful digital products with an emphasis on AI and data.
+        Currently based in Utrecht, Netherlands.
       </p>
     </div>
   </div>
@@ -22,56 +22,46 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
     <div class="col-span-2">
       <h2 class="text-2xl font-bold mb-6">Current Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {% assign current_projects = site.projects | where: "status", "current" | sort: "order" | limit: 4 %}
+        {% for project in current_projects %}
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Epistemy</h3>
-          <p class="text-gray-600">Co-founder & CTO, building AI-powered educational technology solutions.</p>
+          <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+          <p class="text-gray-600">{{ project.role }}, {{ project.description | truncate: 100 }}</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">SLO AI Meetup</h3>
-          <p class="text-gray-600">Organizing Slovenia's premier AI community events with 100+ attendees.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">ASEF Podcast</h3>
-          <p class="text-gray-600">Leading the American Slovenian Education Foundation podcast initiative.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">DSI Conference</h3>
-          <p class="text-gray-600">Contributing to Slovenia's Društvo Informatika conference organization.</p>
-        </div>
+        {% endfor %}
       </div>
     </div>
 
-    <!-- Recent Publications -->
+    <!-- Recent Content -->
     <div class="col-span-1">
-      <h2 class="text-2xl font-bold mb-6">Recent Publications</h2>
+      <h2 class="text-2xl font-bold mb-6">Recent Content</h2>
       <div class="space-y-4">
+        {% assign recent_publications = site.publications | sort: "date" | reverse | limit: 2 %}
+        {% for pub in recent_publications %}
         <div class="bg-white p-4 rounded-lg shadow-md">
-          <span class="text-sm text-gray-500">Finance Magazine</span>
-          <h3 class="font-semibold mt-1">Latest articles on AI and technology trends</h3>
-          <a href="#" class="text-blue-600 text-sm">Read more →</a>
+          <span class="text-sm text-gray-500">{{ pub.publication }}</span>
+          <h3 class="font-semibold mt-1">{{ pub.title | truncate: 60 }}</h3>
+          <a href="{{ pub.url }}" class="text-blue-600 text-sm">Read more →</a>
         </div>
+        {% endfor %}
+        
+        {% assign recent_episodes = site.episodes | sort: "date" | reverse | limit: 1 %}
+        {% for episode in recent_episodes %}
         <div class="bg-white p-4 rounded-lg shadow-md">
           <span class="text-sm text-gray-500">ASEF Podcast</span>
-          <h3 class="font-semibold mt-1">Conversations with leading researchers and innovators</h3>
-          <a href="#" class="text-blue-600 text-sm">Listen →</a>
+          <h3 class="font-semibold mt-1">{{ episode.title | truncate: 60 }}</h3>
+          <a href="{{ episode.url }}" class="text-blue-600 text-sm">Listen →</a>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Experience Highlights -->
-  <div class="mb-16">
-    <h2 class="text-2xl font-bold mb-6">Experience Highlights</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold mb-2">Research Fellow</h3>
-        <p class="text-gray-500 mb-2">UC Berkeley | 2023</p>
-        <p class="text-gray-600">Research on Generative AI Watermarking for Speech</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold mb-2">Data Engineer</h3>
-        <p class="text-gray-500 mb-2">Plume Design, Inc | 2021-2022</p>
-        <p class="text-gray-600">Developed and maintained Apache Spark data pipelines</p>
+        {% endfor %}
+        
+        {% assign recent_appearances = site.appearances | sort: "date" | reverse | limit: 1 %}
+        {% for appearance in recent_appearances %}
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <span class="text-sm text-gray-500">Appearance</span>
+          <h3 class="font-semibold mt-1">{{ appearance.title | truncate: 60 }}</h3>
+          <a href="{{ appearance.url }}" class="text-blue-600 text-sm">Learn more →</a>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
