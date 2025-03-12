@@ -3,6 +3,7 @@ title: Fukola Hotsauce
 role: Co-founder
 status: current
 order: 5
+hidden: true
 description: An entrepreneurial venture in the food industry, developing and marketing artisanal hot sauces with unique flavor profiles and sustainable packaging.
 tags:
   - Food
