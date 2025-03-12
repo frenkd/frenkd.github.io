@@ -1,6 +1,6 @@
 ---
 title: Slovenia AI Meetup
-role: Organizer
+role: Co-organizer
 status: current
 order: 3
 start_date: 2024-11-10

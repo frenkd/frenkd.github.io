@@ -10,10 +10,10 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
     <div class="md:w-1/3 flex justify-center md:justify-end pr-0 md:pr-8 mb-6 md:mb-0">
       <img src="/assets/images/frenk.jpeg" alt="Frenk Dragar" class="rounded-full w-48 h-48 object-cover shadow-lg">
     </div>
-    <div class="md:w-2/3">
+    <div class="md:w-2/3 text-center md:text-left">
       <h1 class="text-4xl font-bold mb-4">Frenk Dragar</h1>
       <p class="text-xl mb-6">Bringing AI into EdTech</p>
-      <p class="text-gray-600 mb-8 max-w-xl">
+      <p class="text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">
         Co-founder & CTO at Epistemy, focused on creating impactful digital products with an emphasis on AI and data.
         Currently based in Ljubljana, Slovenia.
       </p>
@@ -22,10 +22,9 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
 
   <!-- Current Projects Section -->
   <div class="grid md:grid-cols-3 gap-8 mb-16">
-    <div class="col-span-2">
-      <div class="flex items-center justify-between mb-6">
+    <div class="col-span-3 md:col-span-2">
+      <div class="flex items-center mb-6">
         <h2 class="text-2xl font-bold">Current Projects</h2>
-        <span class="text-sm text-gray-500">Last updated: {{ site.time | date: "%B %d, %Y" }}</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {% assign current_projects = site.projects | where: "status", "current" | where_exp: "project", "project.hidden != true" | sort: "order" | limit: 4 %}
@@ -51,33 +50,33 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
     </div>
 
     <!-- Recent Content -->
-    <div class="col-span-1" id="recent-content" data-substack-url="{{ site.substack_url }}">
+    <div class="col-span-3 md:col-span-1 mt-12 md:mt-0" id="recent-content" data-substack-url="{{ site.substack_url }}">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold">Recent Content</h2>
       </div>
       
       <!-- Loading spinner -->
-      <div id="recent-content-loading" class="bg-white p-4 rounded-lg shadow-md flex justify-center mb-4">
+      <div id="recent-content-loading" class="bg-white p-5 rounded-lg shadow-md flex justify-center mb-4">
         <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
       </div>
       
-      <div id="recent-content-items" class="space-y-4">
+      <div id="recent-content-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4">
         <!-- Initial static content items that will be dynamically reordered and filtered -->
         {% assign recent_publications = site.publications | sort: "date" | reverse %}
         {% for pub in recent_publications %}
-        <div class="bg-white p-4 rounded-lg shadow-md content-item" data-date="{{ pub.date | date_to_xmlschema }}">
-          <span class="text-sm text-gray-500">{{ pub.publication }} • {{ pub.date | date: "%B %d, %Y" }}</span>
-          <h3 class="font-semibold mt-1">{{ pub.title | truncate: 60 }}</h3>
-          <a href="{{ pub.url }}" class="text-blue-600 text-sm">Read article →</a>
+        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ pub.date | date_to_xmlschema }}">
+          <span class="text-sm text-gray-500 block mb-1">{{ pub.publication }} • {{ pub.date | date: "%B %d, %Y" }}</span>
+          <h3 class="font-semibold text-lg mb-2">{{ pub.title | truncate: 60 }}</h3>
+          <a href="{{ pub.url }}" class="text-blue-600 text-sm inline-block hover:underline">Read article →</a>
         </div>
         {% endfor %}
         
         {% assign recent_episodes = site.episodes | sort: "date" | reverse %}
         {% for episode in recent_episodes %}
-        <div class="bg-white p-4 rounded-lg shadow-md content-item" data-date="{{ episode.date | date_to_xmlschema }}">
-          <span class="text-sm text-gray-500">ASEF Podcast • {{ episode.date | date: "%B %d, %Y" }}</span>
-          <h3 class="font-semibold mt-1">{{ episode.title | truncate: 60 }}</h3>
-          <a href="{{ episode.url }}" class="text-blue-600 text-sm">Listen →</a>
+        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ episode.date | date_to_xmlschema }}">
+          <span class="text-sm text-gray-500 block mb-1">ASEF Podcast • {{ episode.date | date: "%B %d, %Y" }}</span>
+          <h3 class="font-semibold text-lg mb-2">{{ episode.title | truncate: 60 }}</h3>
+          <a href="{{ episode.url }}" class="text-blue-600 text-sm inline-block hover:underline">Listen →</a>
         </div>
         {% endfor %}
         
@@ -85,15 +84,15 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
         {% for appearance in recent_appearances %}
         {% assign event_date = appearance.date | date: '%s' %}
         {% assign current_date = site.time | date: '%s' %}
-        <div class="bg-white p-4 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-type="appearance">
-          <div class="flex justify-between items-start">
+        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-type="appearance">
+          <div class="flex justify-between items-start mb-1">
             <span class="text-sm text-gray-500">Appearance • {{ appearance.date | date: "%B %d, %Y" }}</span>
             {% if event_date > current_date %}
-            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Upcoming</span>
+            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded flex-shrink-0 ml-2">Upcoming</span>
             {% endif %}
           </div>
-          <h3 class="font-semibold mt-1">{{ appearance.title | truncate: 60 }}</h3>
-          <a href="/appearances/{{ appearance.title | slugify }}" class="text-blue-600 text-sm">Learn more →</a>
+          <h3 class="font-semibold text-lg mb-2">{{ appearance.title | truncate: 60 }}</h3>
+          <a href="/appearances/{{ appearance.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">Learn more →</a>
         </div>
         {% endfor %}
       </div>

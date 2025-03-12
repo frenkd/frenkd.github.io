@@ -1,7 +1,8 @@
 ---
 title: DSI Conference
-role: Organizer
+role: Co-organizer
 status: current
+start_date: 2024-11-01
 order: 4
 description: Contributing to Slovenia's Društvo Informatika conference organization, bringing together professionals, academics, and policy makers to discuss digital transformation and technological innovation.
 tags:
