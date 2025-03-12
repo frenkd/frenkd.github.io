@@ -34,7 +34,7 @@ defaults:
       path: ""
       type: "episodes"
     values:
-      layout: default
+      layout: episode
   - scope:
       path: ""
       type: "appearances"
