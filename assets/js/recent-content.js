@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get Substack URL if available
     const substackUrl = recentContentContainer.getAttribute('data-substack-url');
     
+    // Get YouTube channel ID if available
+    const youtubeChannelId = recentContentContainer.getAttribute('data-youtube-channel-id');
+    
     // Collect all static content items
     const contentItems = [];
     
@@ -66,8 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingElement.style.display = 'none';
     }
     
+    // Counter for pending requests
+    let pendingRequests = 0;
+    
     // If we have a Substack URL, fetch the blog posts
     if (substackUrl) {
+        pendingRequests++;
         const rss2jsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(substackUrl)}`;
         
         fetch(rss2jsonUrl)
@@ -97,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         postElement.innerHTML = `
                             <span class="text-sm text-gray-500 block mb-1">Blog • ${formattedDate}</span>
                             <h3 class="font-semibold text-lg mb-2">${post.title}</h3>
-                            <a href="/publications#${slugify(post.title)}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
+                            <a href="${post.link}" target="_blank" class="text-blue-600 text-sm inline-block hover:underline">Read post →</a>
                         `;
                         
                         return {
@@ -111,16 +118,86 @@ document.addEventListener('DOMContentLoaded', function() {
                     contentItems.push(...blogPosts);
                 }
                 
-                // Display all content items
-                displayContent(contentItems);
+                pendingRequests--;
+                if (pendingRequests === 0) {
+                    // Display all content items when all requests are done
+                    displayContent(contentItems);
+                }
             })
             .catch(error => {
                 console.error('Error fetching blog posts:', error);
-                // Even if blog posts fail to load, still display other content
-                displayContent(contentItems);
+                pendingRequests--;
+                if (pendingRequests === 0) {
+                    // Display content even if there was an error
+                    displayContent(contentItems);
+                }
             });
-    } else {
-        // No Substack URL, just display the existing content
+    }
+    
+    // If we have a YouTube channel ID, fetch the videos
+    if (youtubeChannelId) {
+        pendingRequests++;
+        const youtubeRssUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${youtubeChannelId}`)}`;
+        
+        fetch(youtubeRssUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'ok' && data.items && data.items.length > 0) {
+                    // Process YouTube videos
+                    const videos = data.items.map(video => {
+                        // Create element for video
+                        const videoElement = document.createElement('div');
+                        videoElement.className = 'bg-white p-5 rounded-lg shadow-md content-item';
+                        
+                        // Date display
+                        const videoDate = new Date(video.pubDate);
+                        const formattedDate = videoDate.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        
+                        // Content for the video
+                        videoElement.innerHTML = `
+                            <span class="text-sm text-gray-500 block mb-1">YouTube • ${formattedDate}</span>
+                            <h3 class="font-semibold text-lg mb-2">${video.title}</h3>
+                            <a href="${video.link}" target="_blank" class="text-red-600 text-sm inline-block hover:underline">Watch video →</a>
+                        `;
+                        
+                        return {
+                            element: videoElement,
+                            date: videoDate,
+                            timestamp: videoDate.getTime()
+                        };
+                    });
+                    
+                    // Add videos to content items
+                    contentItems.push(...videos);
+                }
+                
+                pendingRequests--;
+                if (pendingRequests === 0) {
+                    // Display all content items when all requests are done
+                    displayContent(contentItems);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching YouTube videos:', error);
+                pendingRequests--;
+                if (pendingRequests === 0) {
+                    // Display content even if there was an error
+                    displayContent(contentItems);
+                }
+            });
+    }
+    
+    // If no external content to fetch, display the existing content
+    if (pendingRequests === 0) {
         displayContent(contentItems);
     }
     
