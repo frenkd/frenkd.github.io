@@ -39,7 +39,7 @@ defaults:
       path: ""
       type: "appearances"
     values:
-      layout: default
+      layout: appearance
   - scope:
       path: ""
       type: "publications"

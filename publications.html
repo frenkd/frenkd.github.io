@@ -107,50 +107,6 @@ description: Articles, Podcasts, and Media Appearances
       {% endif %}
     </div>
   </div>
-
-  <!-- Public Appearances -->
-  <div class="mb-16">
-    <h2 class="text-2xl font-bold mb-6">Public Appearances</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      {% if site.appearances.size > 0 %}
-        {% assign sorted_appearances = site.appearances | sort: "date" | reverse %}
-        {% assign current_date = site.time | date: '%s' %}
-        {% for appearance in sorted_appearances %}
-        {% assign event_date = appearance.date | date: '%s' %}
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="flex justify-between items-start mb-2">
-            <p class="text-gray-500">{{ appearance.date | date: "%B %d, %Y" }}</p>
-            {% if event_date > current_date %}
-            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Upcoming</span>
-            {% endif %}
-          </div>
-          <h3 class="text-xl font-semibold mb-1">{{ appearance.title }}</h3>
-          {% if appearance.organization %}
-          <p class="text-gray-600 text-sm italic mb-2">{{ appearance.organization }}</p>
-          {% endif %}
-          <p class="text-gray-600 mb-2">{{ appearance.location }}</p>
-          <p class="text-gray-600 mb-4">{{ appearance.description }}</p>
-          
-          {% if appearance.resources %}
-          <div class="flex flex-col space-y-1 mb-4">
-            {% for resource in appearance.resources %}
-            <a href="{{ resource.url }}" target="_blank" class="text-blue-600 hover:underline">{{ resource.name }} →</a>
-            {% endfor %}
-          </div>
-          {% endif %}
-          
-          {% if appearance.url %}
-          <a href="{{ appearance.url }}" target="_blank" class="text-blue-600 inline-block hover:underline">Event details →</a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      {% else %}
-        <div class="bg-white p-6 rounded-lg shadow-md col-span-3">
-          <p class="text-gray-600">No appearances available yet. Check back soon!</p>
-        </div>
-      {% endif %}
-    </div>
-  </div>
 </div>
 
 <!-- Substack Feed Script -->
