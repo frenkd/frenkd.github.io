@@ -1,0 +1,70 @@
+---
+layout: default
+title: Blog
+description: My thoughts, experiences, and insights about technology and development
+---
+
+<div class="space-y-8">
+    <header class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">My thoughts, experiences, and insights about technology and development.</p>
+    </header>
+
+    {% if site.substack_url %}
+    <div class="max-w-2xl mx-auto p-6 bg-gray-50 rounded-lg text-center">
+        <h2 class="text-lg font-semibold text-gray-900 mb-2">Subscribe to My Newsletter</h2>
+        <p class="text-gray-600 mb-4">Get my latest posts delivered straight to your inbox.</p>
+        <a href="{{ site.substack_url }}" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark">
+            Subscribe on Substack
+        </a>
+    </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for post in site.posts %}
+        <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+            {% if post.image %}
+            <a href="{{ post.url }}" class="block">
+                <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+            </a>
+            {% endif %}
+            <div class="p-6">
+                <header>
+                    {% if post.categories %}
+                    <div class="flex gap-2 mb-2">
+                        {% for category in post.categories %}
+                        <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full">{{ category }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                        <a href="{{ post.url }}" class="hover:text-primary">{{ post.title }}</a>
+                    </h2>
+                    
+                    <div class="flex items-center text-gray-600 text-sm mb-4">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%B %d, %Y" }}
+                        </time>
+                        {% if post.author %}
+                        <span class="mx-2">&bull;</span>
+                        <span>{{ post.author }}</span>
+                        {% endif %}
+                    </div>
+                </header>
+                
+                {% if post.description %}
+                <p class="text-gray-600 mb-4">{{ post.description }}</p>
+                {% endif %}
+                
+                <a href="{{ post.url }}" class="inline-flex items-center text-primary hover:text-primary-dark">
+                    <span>Read more</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</div> 

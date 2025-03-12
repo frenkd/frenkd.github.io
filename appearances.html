@@ -1,0 +1,83 @@
+---
+layout: default
+title: Appearances
+description: My talks, interviews, podcasts, and other public appearances
+---
+
+<div class="space-y-8">
+    <header class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Appearances</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">My talks, interviews, podcasts, and other public appearances.</p>
+    </header>
+
+    <div class="space-y-6">
+        {% for appearance in site.appearances %}
+        <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+            <div class="flex items-start justify-between">
+                <div class="flex-1">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                        <a href="{{ appearance.url }}" class="hover:text-primary">{{ appearance.title }}</a>
+                    </h2>
+                    <p class="text-gray-600 mb-4">{{ appearance.description }}</p>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                        {% if appearance.event %}
+                        <p>
+                            <span class="font-medium">Event:</span>
+                            {{ appearance.event }}
+                        </p>
+                        {% endif %}
+                        {% if appearance.location %}
+                        <p>
+                            <span class="font-medium">Location:</span>
+                            {{ appearance.location }}
+                        </p>
+                        {% endif %}
+                        {% if appearance.date %}
+                        <p>
+                            <span class="font-medium">Date:</span>
+                            {{ appearance.date | date: "%B %d, %Y" }}
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if appearance.type %}
+                <div class="ml-6">
+                    {% case appearance.type %}
+                    {% when 'talk' %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Talk</span>
+                    {% when 'podcast' %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Podcast</span>
+                    {% when 'interview' %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Interview</span>
+                    {% else %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">{{ appearance.type | capitalize }}</span>
+                    {% endcase %}
+                </div>
+                {% endif %}
+            </div>
+            {% if appearance.video_url or appearance.slides_url or appearance.url %}
+            <div class="mt-4 flex flex-wrap gap-4">
+                {% if appearance.video_url %}
+                <a href="{{ appearance.video_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-primary hover:text-primary-dark">
+                    <span>Watch Video</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </a>
+                {% endif %}
+                {% if appearance.slides_url %}
+                <a href="{{ appearance.slides_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-primary hover:text-primary-dark">
+                    <span>View Slides</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+                </a>
+                {% endif %}
+                {% if appearance.url %}
+                <a href="{{ appearance.url }}" class="inline-flex items-center text-primary hover:text-primary-dark">
+                    <span>Read More</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+</div> 

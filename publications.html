@@ -1,0 +1,59 @@
+---
+layout: default
+title: Publications
+description: My research papers, articles, and other publications
+---
+
+<div class="space-y-8">
+    <header class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Publications</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">My research papers, articles, and other publications.</p>
+    </header>
+
+    <div class="space-y-6">
+        {% for publication in site.publications %}
+        <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="{{ publication.url }}" class="hover:text-primary">{{ publication.title }}</a>
+            </h2>
+            <p class="text-gray-600 mb-4">{{ publication.description }}</p>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                {% if publication.authors %}
+                <p>
+                    <span class="font-medium">Authors:</span>
+                    {{ publication.authors | join: ", " }}
+                </p>
+                {% endif %}
+                {% if publication.publication %}
+                <p>
+                    <span class="font-medium">Published in:</span>
+                    {{ publication.publication }}
+                </p>
+                {% endif %}
+                {% if publication.date %}
+                <p>
+                    <span class="font-medium">Date:</span>
+                    {{ publication.date | date: "%B %Y" }}
+                </p>
+                {% endif %}
+            </div>
+            {% if publication.doi or publication.url %}
+            <div class="mt-4">
+                {% if publication.doi %}
+                <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener" class="inline-flex items-center text-primary hover:text-primary-dark mr-4">
+                    <span>View on DOI</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+                {% endif %}
+                {% if publication.url %}
+                <a href="{{ publication.url }}" class="inline-flex items-center text-primary hover:text-primary-dark">
+                    <span>Read More</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+</div> 

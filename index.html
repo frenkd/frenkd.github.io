@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+<div class="space-y-16">
+    <!-- Hero Section -->
+    <section class="text-center py-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Welcome to My Portfolio</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">A showcase of my projects, publications, appearances, and thoughts.</p>
+    </section>
+
+    <!-- Latest Projects -->
+    <section>
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">Latest Projects</h2>
+            <a href="/projects" class="text-primary hover:text-primary-dark">View all projects →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for project in site.projects limit:3 %}
+            <a href="{{ project.url }}" class="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ project.title }}</h3>
+                    <p class="text-gray-600">{{ project.description | truncate: 120 }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Latest Publications -->
+    <section>
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">Recent Publications</h2>
+            <a href="/publications" class="text-primary hover:text-primary-dark">View all publications →</a>
+        </div>
+        <div class="space-y-4">
+            {% for publication in site.publications limit:3 %}
+            <a href="{{ publication.url }}" class="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ publication.title }}</h3>
+                <p class="text-gray-600">{{ publication.description | truncate: 160 }}</p>
+                <p class="text-sm text-gray-500 mt-2">{{ publication.date | date: "%B %Y" }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Latest Appearances -->
+    <section>
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">Recent Appearances</h2>
+            <a href="/appearances" class="text-primary hover:text-primary-dark">View all appearances →</a>
+        </div>
+        <div class="space-y-4">
+            {% for appearance in site.appearances limit:3 %}
+            <a href="{{ appearance.url }}" class="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ appearance.title }}</h3>
+                <p class="text-gray-600">{{ appearance.description | truncate: 160 }}</p>
+                <p class="text-sm text-gray-500 mt-2">{{ appearance.date | date: "%B %d, %Y" }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section>
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">Latest Posts</h2>
+            <a href="/blog" class="text-primary hover:text-primary-dark">View all posts →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for post in site.posts limit:4 %}
+            <a href="{{ post.url }}" class="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ post.title }}</h3>
+                <p class="text-gray-600">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                <p class="text-sm text-gray-500 mt-2">{{ post.date | date: "%B %d, %Y" }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</div> 

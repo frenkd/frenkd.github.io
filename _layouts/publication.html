@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<article class="max-w-4xl mx-auto">
+    <header class="mb-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+        <p class="text-xl text-gray-600 mb-6">{{ page.description }}</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-lg">
+            {% if page.authors %}
+            <div>
+                <h2 class="text-sm font-medium text-gray-500 mb-2">Authors</h2>
+                <p class="text-gray-900">{{ page.authors | join: ", " }}</p>
+            </div>
+            {% endif %}
+            
+            {% if page.publication %}
+            <div>
+                <h2 class="text-sm font-medium text-gray-500 mb-2">Published in</h2>
+                <p class="text-gray-900">{{ page.publication }}</p>
+            </div>
+            {% endif %}
+            
+            {% if page.date %}
+            <div>
+                <h2 class="text-sm font-medium text-gray-500 mb-2">Publication Date</h2>
+                <p class="text-gray-900">{{ page.date | date: "%B %Y" }}</p>
+            </div>
+            {% endif %}
+            
+            {% if page.doi %}
+            <div>
+                <h2 class="text-sm font-medium text-gray-500 mb-2">DOI</h2>
+                <a href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener" class="text-primary hover:text-primary-dark">
+                    {{ page.doi }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="prose prose-lg max-w-none">
+        {{ content }}
+    </div>
+    
+    {% if page.doi or page.pdf_url %}
+    <footer class="mt-8 pt-8 border-t border-gray-200">
+        <div class="flex gap-4">
+            {% if page.doi %}
+            <a href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener" class="inline-flex items-center text-primary hover:text-primary-dark">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+                <span>View on Publisher's Site</span>
+            </a>
+            {% endif %}
+            
+            {% if page.pdf_url %}
+            <a href="{{ page.pdf_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-primary hover:text-primary-dark">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span>Download PDF</span>
+            </a>
+            {% endif %}
+        </div>
+    </footer>
+    {% endif %}
+</article> 
