@@ -8,6 +8,7 @@ linkedin_username: frenk-dragar
 # Build settings
 markdown: kramdown
 permalink: pretty
+future: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
