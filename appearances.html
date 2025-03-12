@@ -13,7 +13,7 @@ description: Talks, Panels, and Media Appearances
       {% assign current_date = site.time | date: '%s' %}
       {% for appearance in sorted_appearances %}
       {% assign event_date = appearance.date | date: '%s' %}
-      <div class="bg-white p-6 rounded-lg shadow-md">
+      <div id="{{ appearance.title | slugify }}" class="bg-white p-6 rounded-lg shadow-md">
         <div class="flex justify-between items-start mb-2">
           <p class="text-gray-500">{{ appearance.date | date: "%B %d, %Y" }}</p>
           {% if event_date > current_date %}

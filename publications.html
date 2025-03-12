@@ -30,7 +30,7 @@ description: Articles, Podcasts, and Media Appearances
       {% if finance_articles.size > 0 %}
         {% assign sorted_articles = finance_articles | sort: "date" | reverse %}
         {% for article in sorted_articles %}
-        <div class="bg-white p-6 rounded-lg shadow-md">
+        <div id="{{ article.title | slugify }}" class="bg-white p-6 rounded-lg shadow-md">
           <div class="flex justify-between items-start mb-2">
             <span class="text-sm text-gray-500">{{ article.date | date: "%B %d, %Y" }}</span>
             {% if article.subcategory %}
@@ -70,7 +70,7 @@ description: Articles, Podcasts, and Media Appearances
       {% if site.episodes.size > 0 %}
         {% assign sorted_episodes = site.episodes | sort: "date" | reverse %}
         {% for episode in sorted_episodes %}
-        <div class="bg-white p-6 rounded-lg shadow-md">
+        <div id="{{ episode.title | slugify }}" class="bg-white p-6 rounded-lg shadow-md">
           <div class="mb-4">
             <h3 class="text-xl font-semibold">{{ episode.title }}</h3>
             <p class="text-gray-500">Season {{ episode.season }} • Episode {{ episode.episode_number }} • {{ episode.date | date: "%B %d, %Y" }}</p>

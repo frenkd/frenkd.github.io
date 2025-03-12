@@ -45,19 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         recentItems.forEach(item => {
             const clone = item.element.cloneNode(true);
             clone.style.display = 'block';
-            
-            // Fix appearance links to use external URLs if available
-            if (clone.getAttribute('data-type') === 'appearance') {
-                const externalUrl = clone.getAttribute('data-url');
-                if (externalUrl) {
-                    const linkElement = clone.querySelector('a');
-                    if (linkElement) {
-                        linkElement.setAttribute('href', externalUrl);
-                        linkElement.setAttribute('target', '_blank');
-                    }
-                }
-            }
-            
             recentContentItems.appendChild(clone);
         });
         
@@ -110,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         postElement.innerHTML = `
                             <span class="text-sm text-gray-500 block mb-1">Blog • ${formattedDate}</span>
                             <h3 class="font-semibold text-lg mb-2">${post.title}</h3>
-                            <a href="${post.link}" target="_blank" class="text-blue-600 text-sm inline-block hover:underline">Read post →</a>
+                            <a href="/publications#${slugify(post.title)}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
                         `;
                         
                         return {
@@ -135,5 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         // No Substack URL, just display the existing content
         displayContent(contentItems);
+    }
+    
+    // Helper function to slugify titles (similar to Jekyll's slugify filter)
+    function slugify(text) {
+        return text
+            .toString()
+            .toLowerCase()
+            .replace(/\s+/g, '-')        // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')    // Remove all non-word chars
+            .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+            .replace(/^-+/, '')          // Trim - from start of text
+            .replace(/-+$/, '');         // Trim - from end of text
     }
 }); 

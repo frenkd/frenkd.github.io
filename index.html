@@ -67,7 +67,7 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
         <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ pub.date | date_to_xmlschema }}">
           <span class="text-sm text-gray-500 block mb-1">{{ pub.publication }} • {{ pub.date | date: "%B %d, %Y" }}</span>
           <h3 class="font-semibold text-lg mb-2">{{ pub.title | truncate: 60 }}</h3>
-          <a href="{{ pub.url }}" class="text-blue-600 text-sm inline-block hover:underline">Read article →</a>
+          <a href="/publications#{{ pub.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
         </div>
         {% endfor %}
         
@@ -76,7 +76,7 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
         <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ episode.date | date_to_xmlschema }}">
           <span class="text-sm text-gray-500 block mb-1">ASEF Podcast • {{ episode.date | date: "%B %d, %Y" }}</span>
           <h3 class="font-semibold text-lg mb-2">{{ episode.title | truncate: 60 }}</h3>
-          <a href="{{ episode.url }}" class="text-blue-600 text-sm inline-block hover:underline">Listen →</a>
+          <a href="/publications#{{ episode.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
         </div>
         {% endfor %}
         
@@ -92,7 +92,7 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
             {% endif %}
           </div>
           <h3 class="font-semibold text-lg mb-2">{{ appearance.title | truncate: 60 }}</h3>
-          <a href="{{ appearance.url }}" target="_blank" class="text-blue-600 text-sm inline-block hover:underline">Learn more →</a>
+          <a href="/appearances#{{ appearance.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
         </div>
         {% endfor %}
       </div>
