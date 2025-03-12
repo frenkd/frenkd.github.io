@@ -3,6 +3,7 @@ title: Epistemy
 role: Co-founder & CTO
 status: current
 order: 1
+start_date: 2024-07-01
 description: Building AI-powered educational technology solutions to transform how students learn and educators teach. Focusing on personalized learning experiences and intelligent tutoring systems.
 tags:
   - EdTech
@@ -29,4 +30,4 @@ Epistemy is an educational technology company focused on leveraging artificial i
 - TensorFlow/PyTorch
 - Natural Language Processing
 - Machine Learning
-- Cloud Infrastructure (AWS) 
+- Cloud Infrastructure (AWS)

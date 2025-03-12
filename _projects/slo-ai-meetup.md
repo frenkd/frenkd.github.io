@@ -1,19 +1,21 @@
 ---
-title: SLO AI Meetup
+title: Slovenia AI Meetup
 role: Organizer
 status: current
-order: 2
-description: Leading Slovenia's premier AI community event series, bringing together professionals, researchers, and enthusiasts to discuss the latest trends and technologies in artificial intelligence.
+order: 3
+start_date: 2024-11-10
+description: Organizing regular meetups for the AI community in Slovenia, featuring talks from industry experts, academic researchers, and practical workshops.
 tags:
-  - Community
   - AI
+  - Community
   - Events
-  - Networking
+  - Knowledge Sharing
+website: https://slovenia.ai
 ---
 
-# SLO AI Meetup
+# Slovenia AI Meetup
 
-SLO AI Meetup is a community initiative that brings together AI enthusiasts, professionals, and researchers in Slovenia. The meetup serves as a platform for knowledge exchange, networking, and collaboration within the AI ecosystem.
+Slovenia AI Meetup is a community initiative that brings together AI enthusiasts, professionals, and researchers in Slovenia. The meetup serves as a platform for knowledge exchange, networking, and collaboration within the AI ecosystem.
 
 ## Key Activities
 

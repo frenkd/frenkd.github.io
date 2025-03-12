@@ -1,14 +1,15 @@
 ---
 title: ASEF Podcast
-role: Host & Producer
+role: Host
 status: current
-order: 3
-description: Leading the American Slovenian Education Foundation podcast, featuring conversations with researchers, academics, and innovators in the fields of AI, technology, and education.
+order: 2
+start_date: 2023-09-01
+description: Hosting a podcast featuring conversations with Slovenian researchers and professionals from various fields, exploring their work and insights.
 tags:
-  - Media
-  - Education
-  - Interviews
-  - Academia
+  - Podcast
+  - Interviewing
+  - Knowledge Sharing
+website: https://asef.net/podcast
 ---
 
 # ASEF Podcast
@@ -24,4 +25,4 @@ The ASEF Podcast is an interview series produced in collaboration with the Ameri
 
 ## Featured Guests
 
-The podcast has featured numerous distinguished guests, including professors from top universities, industry leaders, and ASEF Fellows who share their experiences and insights into cutting-edge research, academic life, and career development. 
+The podcast has featured numerous distinguished guests, including professors from top universities, industry leaders, and ASEF Fellows who share their experiences and insights into cutting-edge research, academic life, and career development.

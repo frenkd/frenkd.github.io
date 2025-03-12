@@ -9,10 +9,10 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
   <div class="flex flex-col md:flex-row items-center mb-16">
     <div class="md:w-2/3">
       <h1 class="text-4xl font-bold mb-4">Frenk Dragar</h1>
-      <p class="text-xl mb-6">Bringing AI into EdTech | MSc Artificial Intelligence @ Utrecht University</p>
+      <p class="text-xl mb-6">Bringing AI into EdTech</p>
       <p class="text-gray-600 mb-8">
         Co-founder & CTO at Epistemy, focused on creating impactful digital products with an emphasis on AI and data.
-        Currently based in Utrecht, Netherlands.
+        Currently based in Ljubljana, Slovenia.
       </p>
     </div>
   </div>
@@ -20,12 +20,20 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
   <!-- Current Projects Section -->
   <div class="grid md:grid-cols-3 gap-8 mb-16">
     <div class="col-span-2">
-      <h2 class="text-2xl font-bold mb-6">Current Projects</h2>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">Current Projects</h2>
+        <span class="text-sm text-gray-500">Last updated: {{ site.time | date: "%B %d, %Y" }}</span>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {% assign current_projects = site.projects | where: "status", "current" | sort: "order" | limit: 4 %}
         {% for project in current_projects %}
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+            {% if project.start_date %}
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Since {{ project.start_date | date: "%b %Y" }}</span>
+            {% endif %}
+          </div>
           <p class="text-gray-600">{{ project.role }}, {{ project.description | truncate: 100 }}</p>
         </div>
         {% endfor %}
@@ -77,4 +85,4 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
 </div>
 
 <!-- Recent Content Script -->
-<script src="/assets/js/recent-content.js"></script> 
+<script src="/assets/js/recent-content.js"></script>
