@@ -1,6 +1,6 @@
 ---
 title: "Od študenta do startupa - Praktične lekcije z mednarodne poti v AI"
-date: 2025-03-27
+date: 2025-03-25
 description: "Predavanje prikazuje pot od študentskega dela na IJS in tekmovanju na Evropskih hackathonih, do študija AI na Nizozemskem in raziskovalnega obiska na UC Berkeley v Kaliforniji."
 location: "Ljubljana, Slovenia"
 organization: "Forum podatkovne analitike"
