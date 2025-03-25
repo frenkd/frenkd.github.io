@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    {% if page.layout != nil and page.layout != "redirect" %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      {% if page.last_modified %}
+      <lastmod>{{ page.last_modified | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    {% endif %}
+  {% endfor %}
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+    </url>
+  {% endfor %}
+  {% for project in site.projects %}
+    <url>
+      <loc>{{ site.url }}/projects#{{ project.title | slugify }}</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+  {% for publication in site.publications %}
+    <url>
+      <loc>{{ site.url }}/publications#{{ publication.title | slugify }}</loc>
+      <lastmod>{{ publication.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+  {% for appearance in site.appearances %}
+    <url>
+      <loc>{{ site.url }}/appearances#{{ appearance.title | slugify }}</loc>
+      <lastmod>{{ appearance.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+</urlset> 
