@@ -3,7 +3,7 @@ title: SloBENCH
 role: Developer
 status: past
 start_date: 2021-01-01
-end_date: 2021-12-31
+end_date: 2022-04-30
 website: https://slobench.cjvt.si/
 description: Developed an evaluation platform for benchmarking Slovene natural language processing technologies as part of my BSc Thesis for the Clarin.si & CJVT initiatives.
 tags:

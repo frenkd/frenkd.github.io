@@ -2,87 +2,115 @@
 layout: default
 ---
 
-<article class="max-w-4xl mx-auto pt-12">
-    <header class="mb-8">
-        <div class="flex items-start justify-between mb-6">
-            <h1 class="text-4xl font-bold text-gray-900">{{ page.title }}</h1>
-            {% assign current_date = site.time | date: '%s' %}
-            {% assign event_date = page.date | date: '%s' %}
-            {% if event_date > current_date %}
-            <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Upcoming</span>
-            {% endif %}
-        </div>
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <header class="mb-12">
+        <div class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">{{ page.title }}</h1>
+                {% assign current_date = site.time | date: '%s' %}
+                {% assign event_date = page.date | date: '%s' %}
+                {% if event_date > current_date %}
+                <span class="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 whitespace-nowrap">Upcoming</span>
+                {% endif %}
+            </div>
 
-        <p class="text-xl text-gray-600 mb-6">{{ page.description }}</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-lg">
-            {% if page.organization %}
-            <div>
-                <h2 class="text-sm font-medium text-gray-500 mb-2">Organization</h2>
-                <p class="text-gray-900">{{ page.organization }}</p>
+            <p class="text-lg sm:text-xl text-gray-600">{{ page.description }}</p>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {% if page.organization %}
+                <div class="flex items-start">
+                    <svg class="w-5 h-5 mt-1 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <div>
+                        <h2 class="text-sm font-medium text-gray-500 mb-1">Organization</h2>
+                        <p class="text-gray-900">{{ page.organization }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if page.location %}
+                <div class="flex items-start">
+                    <svg class="w-5 h-5 mt-1 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <div>
+                        <h2 class="text-sm font-medium text-gray-500 mb-1">Location</h2>
+                        <p class="text-gray-900">{{ page.location }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if page.date %}
+                <div class="flex items-start">
+                    <svg class="w-5 h-5 mt-1 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <div>
+                        <h2 class="text-sm font-medium text-gray-500 mb-1">Date</h2>
+                        <p class="text-gray-900">{{ page.date | date: "%B %d, %Y" }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if page.url and page.url contains "http" %}
+                <div class="flex items-start">
+                    <svg class="w-5 h-5 mt-1 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                    </svg>
+                    <div>
+                        <h2 class="text-sm font-medium text-gray-500 mb-1">Event URL</h2>
+                        <a href="{{ page.url }}" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 hover:underline">Visit event page</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+            {% if page.resources.size > 0 %}
+            <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                <h2 class="text-lg font-medium text-gray-800 mb-4">Resources</h2>
+                <div class="flex flex-wrap gap-3">
+                    {% for resource in page.resources %}
+                    <a href="{{ resource.url }}" target="_blank" rel="noopener" 
+                       class="inline-flex items-center px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 hover:border-gray-300 transition-colors">
+                        {{ resource.name }}
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
             {% endif %}
             
-            {% if page.location %}
-            <div>
-                <h2 class="text-sm font-medium text-gray-500 mb-2">Location</h2>
-                <p class="text-gray-900">{{ page.location }}</p>
-            </div>
-            {% endif %}
-            
-            {% if page.date %}
-            <div>
-                <h2 class="text-sm font-medium text-gray-500 mb-2">Date</h2>
-                <p class="text-gray-900">{{ page.date | date: "%B %d, %Y" }}</p>
-            </div>
-            {% endif %}
-            
-            {% if page.url and page.url contains "http" %}
-            <div>
-                <h2 class="text-sm font-medium text-gray-500 mb-2">Event URL</h2>
-                <a href="{{ page.url }}" class="text-blue-600 hover:underline">Visit event page</a>
-            </div>
-            {% endif %}
-        </div>
-        
-        {% if page.resources.size > 0 %}
-        <div class="mt-6">
-            <h2 class="text-lg font-medium text-gray-800 mb-4">Resources</h2>
+            {% if page.video_url or page.slides_url %}
             <div class="flex flex-wrap gap-4">
-                {% for resource in page.resources %}
-                <a href="{{ resource.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    {{ resource.name }}
+                {% if page.video_url %}
+                <a href="{{ page.video_url }}" target="_blank" rel="noopener" 
+                   class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Watch Video</span>
                 </a>
-                {% endfor %}
+                {% endif %}
+                
+                {% if page.slides_url %}
+                <a href="{{ page.slides_url }}" target="_blank" rel="noopener" 
+                   class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                    </svg>
+                    <span>View Slides</span>
+                </a>
+                {% endif %}
             </div>
-        </div>
-        {% endif %}
-        
-        {% if page.video_url or page.slides_url %}
-        <div class="mt-6 flex flex-wrap gap-4">
-            {% if page.video_url %}
-            <a href="{{ page.video_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 hover:text-blue-800">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Watch Video</span>
-            </a>
-            {% endif %}
-            
-            {% if page.slides_url %}
-            <a href="{{ page.slides_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 hover:text-blue-800">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
-                </svg>
-                <span>View Slides</span>
-            </a>
             {% endif %}
         </div>
-        {% endif %}
     </header>
 
-    <div class="prose prose-lg max-w-none mt-10">
-        {{ content | markdownify }}
+    <div class="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-hr:border-gray-200 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:px-4 prose-strong:text-gray-900">
+        <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+            {{ content | markdownify }}
+        </div>
     </div>
 </article> 

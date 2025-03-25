@@ -5,6 +5,9 @@ description: "Poljudnoznanstveno predavanje o tem, kako delujejo generativni mod
 location: "Mladinski Center Celje, Slovenia"
 organization: "ASEF & KŠOC"
 url: "https://asef.net/sl/events/zaznavanje-zigosanje-vsebine-ui/"
+resources:
+  - name: "Post-Event Page"
+    url: "https://asef.net/sl/event/frenk-dragar-zaznavanje-in-zigosanje-vsebine-ustvarjene-z-umetno-inteligenco-2/"
 ---
 
 # ASEF Mladi umi: Zaznavanje in žigosanje AI vsebine

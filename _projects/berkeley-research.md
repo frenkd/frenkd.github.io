@@ -1,29 +1,33 @@
 ---
 title: UC Berkeley Research Fellowship
-role: Research Fellow
+role: ASEF Research Fellow
 status: past
 start_date: 2023-09-01
-end_date: 2023-11-30
-description: Conducted research on Generative AI Watermarking for Speech at UC Berkeley's Speech & Computation Lab under the ASEF Fellowship program.
+end_date: 2023-12-14
+website: https://asef.net/event/frenk-dragar-completed-his-research-visit-at-berkeley/
+description: Conducted research on watermarking AI-generated speech at UC Berkeley's Speech & Computation Lab under Dr. Gašper Beguš, focusing on developing detection methods for synthetic media as part of the ASEF Fellowship program.
 tags:
   - Research
   - AI
   - Speech Processing
   - Machine Learning
+  - ASEF
 ---
 
 # UC Berkeley Research Fellowship
 
-During my time as a Research Fellow at UC Berkeley's Speech & Computation Lab, I worked on developing advanced watermarking techniques for AI-generated speech, addressing one of the key challenges in the era of synthetic media.
+As an ASEF Fellow 2023, I conducted research at UC Berkeley's Speech & Computation Lab under the mentorship of Dr. Gašper Beguš. The project focused on watermarking AI model outputs, specifically addressing the challenge of detecting and preventing misuse of generative speech models.
 
 ## Project Highlights
 
-- Investigated novel approaches to embed imperceptible watermarks in AI-generated speech
-- Collaborated with Prof. Gasper Begus and his research team
-- Developed models to detect AI-generated content with high accuracy
-- Explored the balance between watermark robustness and speech quality
-- Presented findings to the lab and ASEF community
+- Developed techniques for embedding hidden watermarks in AI-generated speech content
+- Implemented detection methods that can distinguish between human and AI-generated audio
+- Created watermarking systems that maintain audio quality while ensuring detectability
+- Explored the growing challenges of synthetic media detection and verification
+- Extended the research into my MSc thesis at Utrecht University
 
 ## Impact
 
-This research contributes to the field of AI safety and responsible AI deployment, offering tools to help distinguish between human and AI-generated speech content in an increasingly complex media landscape. 
+This research contributes to the critical field of AI safety and responsible AI deployment. As generative AI models become more sophisticated, the ability to verify content authenticity becomes increasingly important. The developed watermarking techniques offer a promising approach to help distinguish between human and AI-generated speech content, potentially helping prevent misuse of generative models.
+
+The project has led to ongoing research that will be expanded in my Master's thesis at Utrecht University, with plans for publication as a conference paper. The work was conducted as part of the ASEF Fellowship program, which facilitates research opportunities at top US institutions for Slovenian students. 

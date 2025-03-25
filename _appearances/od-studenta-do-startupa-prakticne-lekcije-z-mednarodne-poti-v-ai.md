@@ -5,6 +5,9 @@ description: "Predavanje prikazuje pot od študentskega dela na IJS in tekmovanj
 location: "Ljubljana, Slovenia"
 organization: "Forum podatkovne analitike"
 url: "https://www.planetgv.si/forum-podatkovne-analitike/mag-frenk-dragar/"
+resources:
+  - name: "Event Page"
+    url: "https://www.planetgv.si/forum-podatkovne-analitike/mag-frenk-dragar/"
 ---
 
 # Od študenta do startupa - Forum podatkovne analitike
