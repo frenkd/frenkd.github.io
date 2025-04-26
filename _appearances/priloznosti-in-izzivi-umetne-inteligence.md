@@ -2,12 +2,15 @@
 title: "Priložnosti in izzivi umetne inteligence"
 date: 2024-03-27
 description: "Predstavitev predvidevanja ekstremnih vremenskih pojavov s strojnim učenjem na prvi okrogli mizi Tutorstva ASEF 2023/2024."
+venue: "Prešernova dvorana, SAZU"
+venue_link: https://www.sazu.si/
 location: "Prešernova dvorana, SAZU, Ljubljana (hybrid)"
+address: "Novi trg 3"
+city: "Ljubljana"
+country: "Slovenia"
 organization: "ASEF - Ameriško-slovenska izobraževalna fundacija"
-url: "https://asef.net/sl/event/priloznosti-in-izzivi-umetne-inteligence/"
+link: "https://asef.net/sl/event/priloznosti-in-izzivi-umetne-inteligence/"
 resources:
-  - name: "Event Page"
-    url: "https://asef.net/sl/event/priloznosti-in-izzivi-umetne-inteligence/"
   - name: "News Article"
     url: "https://asef.net/sl/event/prva-okrogla-miza-tutorstva-asef-frenk-dragar/"
 ---

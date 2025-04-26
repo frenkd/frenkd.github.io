@@ -2,12 +2,17 @@
 title: "Od študenta do startupa - Praktične lekcije z mednarodne poti v AI"
 date: 2025-03-25
 description: "Predavanje prikazuje pot od študentskega dela na IJS in tekmovanju na Evropskih hackathonih, do študija AI na Nizozemskem in raziskovalnega obiska na UC Berkeley v Kaliforniji."
-location: "Ljubljana, Slovenia"
+venue: "Forum podatkovne analitike (PlanetGV)"
+venue_link: https://www.planetgv.si/forum-podatkovne-analitike/
 organization: "Forum podatkovne analitike"
+location: "Ljubljana, Slovenia"
+address: "Pot za Brdom 4"
+city: "Ljubljana"
+country: "Slovenia"
 url: "https://www.planetgv.si/forum-podatkovne-analitike/mag-frenk-dragar/"
 resources:
-  - name: "Event Page"
-    url: "https://www.planetgv.si/forum-podatkovne-analitike/mag-frenk-dragar/"
+  # - name: "Event Page" # Removed as it duplicates the main URL
+  #   url: "https://www.planetgv.si/forum-podatkovne-analitike/mag-frenk-dragar/"
 ---
 
 # Od študenta do startupa - Forum podatkovne analitike

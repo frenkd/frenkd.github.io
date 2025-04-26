@@ -2,14 +2,17 @@
 title: "Data Science Lightning Talks 03"
 date: 2022-04-05
 description: "Presentation on SloBench: Slovenian Natural Language Processing Benchmark at the Data Science Slovenia Meetup."
+venue: "Faculty of Computer and Information Science (FRI)"
+venue_link: https://www.fri.uni-lj.si/sl
 location: "FRI (Faculty of Computer and Information Science), Ljubljana, Slovenia"
+address: "Večna pot 113"
+city: "Ljubljana"
+country: "Slovenia"
 organization: "Data Science Slovenia"
 url: "https://www.meetup.com/Data-Science-Slovenia/events/284487954/"
 resources:
   - name: "FRI Event Page"
     url: "https://www.fri.uni-lj.si/sl/dogodek/data-science-lightning-talks-03"
-  - name: "Meetup Event Page"
-    url: "https://www.meetup.com/Data-Science-Slovenia/events/284487954/"
 ---
 
 # Data Science Lightning Talks 03

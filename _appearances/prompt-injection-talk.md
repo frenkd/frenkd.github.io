@@ -3,8 +3,12 @@ title: "Prompt Injection - Backend Meets AI"
 date: 2024-05-16
 description: "A talk on Prompt Injection delivered at the Backend Meetup event in Ljubljana."
 location: "Ljubljana, Slovenia"
+city: "Ljubljana"
+country: "Slovenia"
+venue: "Celtra"
+venue_link: https://www.celtra.com/
 organization: "Ljubljana Backend Meetup"
-url: "https://www.youtube.com/watch?v=52q89YvRdHI&t=973s"
+link: "https://www.youtube.com/watch?v=52q89YvRdHI&t=973s"
 resources:
   - name: "Video Recording"
     url: "https://www.youtube.com/watch?v=52q89YvRdHI&t=973s"

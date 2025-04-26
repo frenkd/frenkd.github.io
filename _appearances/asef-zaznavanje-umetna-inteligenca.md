@@ -2,9 +2,14 @@
 title: "Zaznavanje in žigosanje vsebine ustvarjene z umetno inteligenco"
 date: 2024-03-28
 description: "Poljudnoznanstveno predavanje o tem, kako delujejo generativni modeli umetne inteligence in kako lahko razločimo, katere vsebine so ustvarili."
+venue: "Mladinski Center Celje"
+venue_link: https://www.mc-celje.si/ # Assuming this is the correct link
 location: "Mladinski Center Celje, Slovenia"
+address: "Mariborska cesta 2" # Found via web search
+city: "Celje"
+country: "Slovenia"
 organization: "ASEF & KŠOC"
-url: "https://asef.net/sl/events/zaznavanje-zigosanje-vsebine-ui/"
+link: "https://asef.net/sl/events/zaznavanje-zigosanje-vsebine-ui/"
 resources:
   - name: "Post-Event Page"
     url: "https://asef.net/sl/event/frenk-dragar-zaznavanje-in-zigosanje-vsebine-ustvarjene-z-umetno-inteligenco-2/"

@@ -23,21 +23,25 @@ description: Talks, Panels, and Media Appearances
         
         <h3 class="text-xl font-semibold mb-1">{{ appearance.title }}</h3>
         
+        {% if appearance.venue %}
+          <p class="text-gray-600 mb-2">
+            {% if appearance.venue_link %}
+              <a href="{{ appearance.venue_link }}" target="_blank" class="hover:underline">{{ appearance.venue }}</a>
+            {% else %}
+              {{ appearance.venue }}
+            {% endif %}
+            {% if appearance.city %}, {{ appearance.city }}{% endif %}
+          </p>
+        {% elsif appearance.location %}
+          <p class="text-gray-600 mb-2">{{ appearance.location }}</p>
+        {% endif %}
+        
         {% if appearance.organization %}
         <p class="text-gray-600 text-sm italic mb-2">{{ appearance.organization }}</p>
         {% endif %}
         
-        <p class="text-gray-600 mb-2">{{ appearance.location }}</p>
         <p class="text-gray-600 mb-4">{{ appearance.description }}</p>
         
-        {% if appearance.resources %}
-        <div class="flex flex-col space-y-1 mb-4">
-          <p class="font-medium text-gray-700">Resources:</p>
-          {% for resource in appearance.resources %}
-          <a href="{{ resource.url }}" target="_blank" class="text-blue-600 hover:underline">{{ resource.name }} →</a>
-          {% endfor %}
-        </div>
-        {% endif %}
         
         {% if appearance.url %}
         <a href="{{ appearance.url }}" class="text-blue-600 inline-block hover:underline">Event details →</a>
