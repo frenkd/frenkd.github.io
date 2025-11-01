@@ -1,9 +1,10 @@
 ---
 title: Epistemy
 role: Co-founder & CTO
-status: current
+status: past
 order: 1
 start_date: 2024-07-01
+end_date: 2025-09-30
 description: Building AI-powered educational technology solutions to transform how students learn and educators teach. Focusing on personalized learning experiences and intelligent tutoring systems.
 tags:
   - EdTech
