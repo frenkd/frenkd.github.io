@@ -10,15 +10,11 @@ description: Talks, Panels, and Media Appearances
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {% if site.appearances.size > 0 %}
       {% assign sorted_appearances = site.appearances | sort: "date" | reverse %}
-      {% assign current_date = site.time | date: '%s' %}
       {% for appearance in sorted_appearances %}
-      {% assign event_date = appearance.date | date: '%s' %}
-      <div id="{{ appearance.title | slugify }}" class="bg-white p-6 rounded-lg shadow-md">
-        <div class="flex justify-between items-start mb-2">
+      <div id="{{ appearance.title | slugify }}" class="bg-white p-6 rounded-lg shadow-md" data-event-date="{{ appearance.date }}">
+        <div class="flex justify-between items-start mb-2" data-upcoming-container>
           <p class="text-gray-500">{{ appearance.date | date: "%B %d, %Y" }}</p>
-          {% if event_date > current_date %}
-          <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Upcoming</span>
-          {% endif %}
+          <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded upcoming-badge" data-upcoming-badge style="display: none;">Upcoming</span>
         </div>
         
         <h3 class="text-xl font-semibold mb-1">{{ appearance.title }}</h3>

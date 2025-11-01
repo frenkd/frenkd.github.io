@@ -5,13 +5,9 @@ layout: default
 <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <header class="mb-12">
         <div class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4" data-event-date="{{ page.date }}">
                 <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">{{ page.title }}</h1>
-                {% assign current_date = site.time | date: '%s' %}
-                {% assign event_date = page.date | date: '%s' %}
-                {% if event_date > current_date %}
-                <span class="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 whitespace-nowrap">Upcoming</span>
-                {% endif %}
+                <span class="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 whitespace-nowrap upcoming-badge" data-upcoming-badge style="display: none;">Upcoming</span>
             </div>
 
             <p class="text-lg sm:text-xl text-gray-600">{{ page.description }}</p>

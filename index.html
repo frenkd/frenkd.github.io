@@ -113,14 +113,10 @@ description: AI Engineer & Tech Writer | Bringing AI into EdTech
         
         {% assign recent_appearances = site.appearances | sort: "date" | reverse %}
         {% for appearance in recent_appearances %}
-        {% assign event_date = appearance.date | date: '%s' %}
-        {% assign current_date = site.time | date: '%s' %}
-        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-type="appearance" data-url="{{ appearance.url }}">
-          <div class="flex justify-between items-start mb-1">
+        <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-event-date="{{ appearance.date }}" data-type="appearance" data-url="{{ appearance.url }}">
+          <div class="flex justify-between items-start mb-1" data-upcoming-container>
             <span class="text-sm text-gray-500">Appearance • {{ appearance.date | date: "%B %d, %Y" }}</span>
-            {% if event_date > current_date %}
-            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded flex-shrink-0 ml-2">Upcoming</span>
-            {% endif %}
+            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded flex-shrink-0 ml-2 upcoming-badge" data-upcoming-badge style="display: none;">Upcoming</span>
           </div>
           <h3 class="font-semibold text-lg mb-2">{{ appearance.title | truncate: 60 }}</h3>
           <a href="/appearances#{{ appearance.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
