@@ -26,22 +26,22 @@ description: AI Engineer & Tech Writer | Consulting and Development
 }
 </script>
 
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 py-10">
   <!-- Hero Section -->
   <div class="flex flex-col md:flex-row items-center mb-16">
-    <div class="md:w-1/3 flex justify-center md:justify-end pr-0 md:pr-8 mb-6 md:mb-0">
-      <a href="https://linkedin.com/in/frenk-dragar" target="_blank">
-        <img src="/assets/images/frenk.jpeg" alt="Frenk Dragar" class="rounded-full w-48 h-48 object-cover shadow-lg hover:opacity-90 transition-opacity">
+    <div class="md:w-1/3 flex justify-center md:justify-end pr-0 md:pr-10 mb-8 md:mb-0">
+      <a href="https://linkedin.com/in/frenk-dragar" target="_blank" class="no-underline">
+        <img src="/assets/images/frenk.jpeg" alt="Frenk Dragar" class="rounded-full w-44 h-44 object-cover hover:opacity-90 transition-opacity">
       </a>
     </div>
     <div class="md:w-2/3 text-center md:text-left">
-      <h1 class="text-4xl font-bold mb-4">Frenk Dragar</h1>
-      <p class="text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">
+      <h1 class="text-4xl font-bold mb-3 text-gray-900">Frenk Dragar</h1>
+      <p class="text-gray-500 mb-7 max-w-lg mx-auto md:mx-0 text-base leading-relaxed">
         Founder at Trivial Group, a boutique AI development and consulting company based in Slovenia.
         Currently based in Ljubljana, Slovenia.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-        <a href="https://linkedin.com/in/frenk-dragar" target="_blank" class="bg-[#0077B5] text-white px-4 py-2 rounded-lg hover:bg-[#006399] transition-colors flex items-center gap-2">
+      <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+        <a href="https://linkedin.com/in/frenk-dragar" target="_blank" class="bg-[#0A66C2] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#004182] transition-colors flex items-center gap-2 no-underline">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
@@ -55,24 +55,24 @@ description: AI Engineer & Tech Writer | Consulting and Development
   <div class="grid md:grid-cols-3 gap-8 mb-16">
     <div class="col-span-3 md:col-span-2">
       <div class="flex items-center mb-6">
-        <h2 class="text-2xl font-bold">Current Projects</h2>
+        <h2 class="text-xl font-semibold text-gray-900">Current Projects</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {% assign current_projects = site.projects | where: "status", "current" | where_exp: "project", "project.hidden != true" | sort: "order" | limit: 4 %}
         {% for project in current_projects %}
         <div class="bg-white p-6 rounded-lg shadow-md">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+            <h3 class="text-lg font-semibold">{{ project.title }}</h3>
             {% if project.start_date %}
-            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Since {{ project.start_date | date: "%b %Y" }}</span>
+            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded font-medium">Since {{ project.start_date | date: "%b %Y" }}</span>
             {% endif %}
           </div>
-          <p class="text-gray-600 font-medium mb-1">{{ project.role }}</p>
-          <p class="text-gray-600 mb-4">{{ project.description | truncate: 100 }}</p>
+          <p class="text-gray-500 text-sm font-medium mb-1">{{ project.role }}</p>
+          <p class="text-gray-500 text-sm mb-4">{{ project.description | truncate: 100 }}</p>
           <div class="flex justify-between items-center">
-            <a href="/projects#{{ project.title | slugify }}" class="text-blue-600 text-sm hover:underline">View details →</a>
+            <a href="/projects#{{ project.title | slugify }}" class="text-blue-600 text-sm font-medium no-underline hover:underline">View details →</a>
             {% if project.website %}
-            <a href="{{ project.website }}" class="text-blue-600 text-sm hover:underline" target="_blank">Visit website</a>
+            <a href="{{ project.website }}" class="text-blue-600 text-sm font-medium no-underline hover:underline" target="_blank">Visit website</a>
             {% endif %}
           </div>
         </div>
@@ -83,7 +83,7 @@ description: AI Engineer & Tech Writer | Consulting and Development
     <!-- Recent Content -->
     <div class="col-span-3 md:col-span-1 mt-12 md:mt-0" id="recent-content" data-substack-url="{{ site.substack_url }}" data-youtube-channel-id="{{ site.youtube_channel_id }}">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-2xl font-bold">Recent Content</h2>
+        <h2 class="text-xl font-semibold text-gray-900">Recent Content</h2>
       </div>
       
       <!-- Loading spinner -->
@@ -91,35 +91,35 @@ description: AI Engineer & Tech Writer | Consulting and Development
         <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
       </div>
       
-      <div id="recent-content-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4">
+      <div id="recent-content-items" class="grid grid-cols-1 gap-4">
         <!-- Initial static content items that will be dynamically reordered and filtered -->
         {% assign recent_publications = site.publications | sort: "date" | reverse %}
         {% for pub in recent_publications %}
         <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ pub.date | date_to_xmlschema }}">
-          <span class="text-sm text-gray-500 block mb-1">{{ pub.publication }} • {{ pub.date | date: "%B %d, %Y" }}</span>
-          <h3 class="font-semibold text-lg mb-2">{{ pub.title | truncate: 60 }}</h3>
-          <a href="/publications#{{ pub.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
+          <span class="text-xs text-gray-400 block mb-1.5 font-medium uppercase tracking-wide">{{ pub.publication }} · {{ pub.date | date: "%b %d, %Y" }}</span>
+          <h3 class="font-semibold text-base mb-2 leading-snug">{{ pub.title | truncate: 60 }}</h3>
+          <a href="/publications#{{ pub.title | slugify }}" class="text-blue-600 text-sm font-medium no-underline hover:underline">View details →</a>
         </div>
         {% endfor %}
         
         {% assign recent_episodes = site.episodes | sort: "date" | reverse %}
         {% for episode in recent_episodes %}
         <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ episode.date | date_to_xmlschema }}">
-          <span class="text-sm text-gray-500 block mb-1">ASEF Podcast • {{ episode.date | date: "%B %d, %Y" }}</span>
-          <h3 class="font-semibold text-lg mb-2">{{ episode.title | truncate: 60 }}</h3>
-          <a href="/publications#{{ episode.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
+          <span class="text-xs text-gray-400 block mb-1.5 font-medium uppercase tracking-wide">ASEF Podcast · {{ episode.date | date: "%b %d, %Y" }}</span>
+          <h3 class="font-semibold text-base mb-2 leading-snug">{{ episode.title | truncate: 60 }}</h3>
+          <a href="/publications#{{ episode.title | slugify }}" class="text-blue-600 text-sm font-medium no-underline hover:underline">View details →</a>
         </div>
         {% endfor %}
         
         {% assign recent_appearances = site.appearances | sort: "date" | reverse %}
         {% for appearance in recent_appearances %}
         <div class="bg-white p-5 rounded-lg shadow-md content-item" data-date="{{ appearance.date | date_to_xmlschema }}" data-event-date="{{ appearance.date }}" data-type="appearance" data-url="{{ appearance.url }}">
-          <div class="flex justify-between items-start mb-1" data-upcoming-container>
-            <span class="text-sm text-gray-500">Appearance • {{ appearance.date | date: "%B %d, %Y" }}</span>
-            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded flex-shrink-0 ml-2 upcoming-badge" data-upcoming-badge style="display: none;">Upcoming</span>
+          <div class="flex justify-between items-start mb-1.5" data-upcoming-container>
+            <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">Appearance · {{ appearance.date | date: "%b %d, %Y" }}</span>
+            <span class="px-2 py-0.5 bg-green-50 text-green-700 text-xs rounded font-medium flex-shrink-0 ml-2 upcoming-badge" data-upcoming-badge style="display: none;">Upcoming</span>
           </div>
-          <h3 class="font-semibold text-lg mb-2">{{ appearance.title | truncate: 60 }}</h3>
-          <a href="/appearances#{{ appearance.title | slugify }}" class="text-blue-600 text-sm inline-block hover:underline">View details →</a>
+          <h3 class="font-semibold text-base mb-2 leading-snug">{{ appearance.title | truncate: 60 }}</h3>
+          <a href="/appearances#{{ appearance.title | slugify }}" class="text-blue-600 text-sm font-medium no-underline hover:underline">View details →</a>
         </div>
         {% endfor %}
       </div>

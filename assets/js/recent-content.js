@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add "View all" link if we have content
         if (recentItems.length > 0) {
             const viewAllContainer = document.createElement('div');
-            viewAllContainer.className = 'bg-gray-50 p-5 rounded-lg shadow-sm text-center mt-2 hover:bg-gray-100 transition-colors';
+            viewAllContainer.className = 'pt-2 text-center';
             
             const viewAllLink = document.createElement('a');
             viewAllLink.href = '/publications';
-            viewAllLink.className = 'text-blue-600 font-medium';
+            viewAllLink.className = 'text-sm text-blue-600 font-medium hover:underline';
             viewAllLink.textContent = 'View all content →';
             
             viewAllContainer.appendChild(viewAllLink);
