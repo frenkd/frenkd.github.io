@@ -1,29 +1,30 @@
 ---
-title: Slovenia AI Meetup
-role: Co-organizer
+title: SLO AI
+role: Founding Member
 status: current
-order: 3
+order: 4
 start_date: 2024-11-10
-description: Organizing regular meetups for the AI community in Slovenia, featuring talks from industry experts, academic researchers, and practical workshops.
+description: Building the Slovenian AI community — meetups, events, and collaborative initiatives connecting AI practitioners, researchers, and industry across Slovenia.
 tags:
   - AI
   - Community
   - Events
   - Knowledge Sharing
-website: https://www.eventbrite.com/o/104538676951
+website: https://sloai.org
 ---
 
-# Slovenia AI Meetup
+# SLO AI
 
-Slovenia AI Meetup is a community initiative that brings together AI enthusiasts, professionals, and researchers in Slovenia. The meetup serves as a platform for knowledge exchange, networking, and collaboration within the AI ecosystem.
+SLO AI is a community initiative building the AI ecosystem in Slovenia. What started as a meetup series has grown into a broader platform connecting AI practitioners, researchers, and industry professionals across the country.
 
 ## Key Activities
 
-- Organizing regular meetups with expert speakers
-- Facilitating discussions on AI trends, technologies, and applications
-- Building a community of AI practitioners and enthusiasts
+- Organizing regular meetups and events featuring expert speakers from industry and academia
+- Facilitating discussions on AI trends, technologies, and practical applications
+- Building a community of AI engineers, researchers, and enthusiasts
 - Creating opportunities for collaboration across academia and industry
+- Partnering with organizations to bring international AI events and speakers to Slovenia
 
 ## Impact
 
-Since its inception, the meetup has grown to attract over 100 attendees per event and has featured speakers from leading companies and research institutions. The initiative has helped foster collaboration and knowledge sharing in Slovenia's AI community. 
+SLO AI events regularly attract over 100 attendees and have featured speakers from leading companies and research institutions. The community has become a key node in Slovenia's AI ecosystem, fostering knowledge sharing and collaboration.
