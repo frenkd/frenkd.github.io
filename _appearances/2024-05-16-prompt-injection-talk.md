@@ -8,6 +8,7 @@ country: "Slovenia"
 venue: "Celtra"
 venue_link: https://www.celtra.com/
 organization: "Ljubljana Backend Meetup"
+organization_link: "https://www.meetup.com/backend-meetup-slovenia/"
 link: "https://www.youtube.com/watch?v=52q89YvRdHI&t=973s"
 resources:
   - name: "Video Recording"

@@ -5,6 +5,7 @@ description: "Predavanje prikazuje pot od študentskega dela na IJS in tekmovanj
 venue: "Forum podatkovne analitike (PlanetGV)"
 venue_link: https://www.planetgv.si/forum-podatkovne-analitike/
 organization: "Forum podatkovne analitike"
+organization_link: "https://www.planetgv.si/forum-podatkovne-analitike/"
 location: "Ljubljana, Slovenia"
 address: "Pot za Brdom 4"
 city: "Ljubljana"

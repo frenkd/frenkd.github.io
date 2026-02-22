@@ -9,6 +9,7 @@ address: "Novi trg 3"
 city: "Ljubljana"
 country: "Slovenia"
 organization: "ASEF - Ameriško-slovenska izobraževalna fundacija"
+organization_link: "https://www.asef.org/"
 link: "https://asef.net/sl/event/priloznosti-in-izzivi-umetne-inteligence/"
 resources:
   - name: "News Article"

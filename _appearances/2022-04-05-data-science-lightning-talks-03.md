@@ -9,6 +9,7 @@ address: "Večna pot 113"
 city: "Ljubljana"
 country: "Slovenia"
 organization: "Data Science Slovenia"
+organization_link: "https://datascience.fri.uni-lj.si/"
 url: "https://www.meetup.com/Data-Science-Slovenia/events/284487954/"
 resources:
   - name: "FRI Event Page"

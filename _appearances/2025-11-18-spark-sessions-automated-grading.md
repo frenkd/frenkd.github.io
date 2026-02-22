@@ -6,6 +6,7 @@ description: "Exploring practical lessons from deploying automated grading and s
 venue: "Faculty of Computer and Information Science"
 venue_link: https://www.fri.uni-lj.si/
 organization: "Spark Sessions"
+organization_link: "https://spark-sessions.si/"
 address: "Večna pot 113"
 city: "Ljubljana"
 country: "Slovenia"

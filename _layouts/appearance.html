@@ -25,7 +25,13 @@ layout: default
     {% if page.organization %}
     <div class="meta-item">
       <div class="meta-label">Organization</div>
-      <div class="meta-value">{{ page.organization }}</div>
+      <div class="meta-value">
+        {% if page.organization_link %}
+          <a href="{{ page.organization_link }}" target="_blank" rel="noopener" style="color:var(--accent)">{{ page.organization }}</a>
+        {% else %}
+          {{ page.organization }}
+        {% endif %}
+      </div>
     </div>
     {% endif %}
 

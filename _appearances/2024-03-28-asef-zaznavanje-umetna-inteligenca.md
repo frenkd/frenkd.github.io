@@ -9,6 +9,7 @@ address: "Mariborska cesta 2" # Found via web search
 city: "Celje"
 country: "Slovenia"
 organization: "ASEF & KŠOC"
+organization_link: "https://www.asef.org/"
 link: "https://asef.net/sl/events/zaznavanje-zigosanje-vsebine-ui/"
 resources:
   - name: "Post-Event Page"

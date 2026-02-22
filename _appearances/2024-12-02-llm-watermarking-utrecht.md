@@ -4,6 +4,7 @@ title: "Learnable Fingerprints for Large Language Models"
 date: 2024-12-02 19:00:00
 description: "A talk about watermarking LLM outputs to distinguish AI-generated from human-written content, discussing methods to maintain trust in digital content creation."
 organization: "Incognito - Utrecht University's AI Study Association"
+organization_link: "https://www.uscki.nl/"
 venue: "Incognito - Utrecht University's AI Study Association"
 venue_link: https://www.uu.nl/
 city: "Utrecht"

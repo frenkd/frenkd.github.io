@@ -1,11 +1,12 @@
 ---
 layout: appearance
-title: "2nd Slovenia AI Meetup: Lessons from Building AI Coding Assistants"
+title: "SLO AI Meetup #2: Lessons from Building AI Coding Assistants"
 date: 2025-02-11
-description: "Co-organized and moderated the 2nd Slovenia AI Meetup featuring Jan Hartman from Sourcegraph discussing context and evaluation for AI coding assistants."
+description: "Co-organized and moderated the SLO AI Meetup #2 featuring Jan Hartman from Sourcegraph discussing context and evaluation for AI coding assistants."
 venue: "Outbrain d.o.o."
 venue_link: https://www.outbrain.com/
-organization: "Slovenia AI Meetup"
+organization: "SLO AI"
+organization_link: "https://sloai.org/"
 address: "Dunajska cesta 5"
 city: "Ljubljana"
 country: "Slovenia"

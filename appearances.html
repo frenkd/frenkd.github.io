@@ -21,7 +21,7 @@ description: Talks, Panels, and Media Appearances
         </div>
 
         {% if appearance.venue or appearance.location %}
-        <div class="item-role">{% if appearance.venue %}{% if appearance.venue_link %}<a href="{{ appearance.venue_link }}" target="_blank" rel="noopener" style="color:var(--text-muted);border-bottom:1px solid var(--border-hover)">{{ appearance.venue }}</a>{% else %}{{ appearance.venue }}{% endif %}{% if appearance.city %}, {{ appearance.city }}{% endif %}{% elsif appearance.location %}{{ appearance.location }}{% endif %}{% if appearance.organization %} &middot; {{ appearance.organization }}{% endif %}</div>
+        <div class="item-role">{% if appearance.venue %}{% if appearance.venue_link %}<a href="{{ appearance.venue_link }}" target="_blank" rel="noopener" style="color:var(--text-muted);border-bottom:1px solid var(--border-hover)">{{ appearance.venue }}</a>{% else %}{{ appearance.venue }}{% endif %}{% if appearance.city %}, {{ appearance.city }}{% endif %}{% elsif appearance.location %}{{ appearance.location }}{% endif %}{% if appearance.organization %} &middot; {% if appearance.organization_link %}<a href="{{ appearance.organization_link }}" target="_blank" rel="noopener" style="color:var(--text-muted);border-bottom:1px solid var(--border-hover)">{{ appearance.organization }}</a>{% else %}{{ appearance.organization }}{% endif %}{% endif %}</div>
         {% endif %}
 
         <p class="item-desc">{{ appearance.description }}</p>

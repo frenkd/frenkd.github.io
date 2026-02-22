@@ -1,11 +1,12 @@
 ---
 layout: appearance
-title: "From Autonomous Agents to Predictive Models: Building the Future of AI"
+title: "SLO AI Meetup #4: From Autonomous Agents to Predictive Models"
 date: 2025-06-19
-description: "Co-organized the Slovenia AI Meetup featuring Jure Leskovec, Stanford professor and former Pinterest Chief Scientist, on building intelligent AI systems that learn, adapt and drive discovery."
+description: "Co-organized the SLO AI featuring Jure Leskovec, Stanford professor and former Pinterest Chief Scientist, on building intelligent AI systems that learn, adapt and drive discovery."
 venue: "Austria Trend Hotel Ljubljana"
 venue_link: https://www.austria-trend.at/en/hotels/ljubljana
-organization: "Slovenia AI Meetup"
+organization: "SLO AI"
+organization_link: "https://sloai.org/"
 address: "Dunajska cesta 154"
 city: "Ljubljana"
 country: "Slovenia"
@@ -14,7 +15,7 @@ lang: en
 role: "Co-organizer"
 ---
 
-Co-organized this Slovenia AI Meetup featuring Jure Leskovec, Slovenian computer scientist and AI expert. Jure is an associate professor at Stanford University, former Chief Scientist at Pinterest, and the co-founder of the AI graph-ML startup Kumo.
+Co-organized this SLO AI featuring Jure Leskovec, Slovenian computer scientist and AI expert. Jure is an associate professor at Stanford University, former Chief Scientist at Pinterest, and the co-founder of the AI graph-ML startup Kumo.
 
 ## Event Details
 
@@ -42,5 +43,5 @@ This talk explored the key components needed to build such intelligent systems, 
 18:00 - 19:00 - From Autonomous Agents to Predictive Models: Building the Future of AI  
 19:00 - 21:00 - Networking and discussions
 
-This event was organized by Slovenia AI Meetup and represents our commitment to bringing world-class AI expertise to Slovenia's growing tech community.
+This event was organized by SLO AI and represents our commitment to bringing world-class AI expertise to Slovenia's growing tech community.
 

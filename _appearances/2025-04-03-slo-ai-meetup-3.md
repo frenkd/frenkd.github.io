@@ -1,11 +1,12 @@
 ---
 layout: appearance
-title: "3rd Slo AI Meetup: Lightning Talks"
+title: "SLO AI Meetup #3: Lightning Talks"
 date: 2025-04-03
-description: "Co-organized and moderated the 3rd Slovenia AI Meetup featuring lightning talks on competitive analysis, AI coding agents, and business data analysis."
+description: "Co-organized and moderated the SLO AI Meetup #3 featuring lightning talks on competitive analysis, AI coding agents, and business data analysis."
 venue: "Celtra d.o.o."
 venue_link: https://www.celtra.com/
-organization: "Slovenia AI Meetup"
+organization: "SLO AI"
+organization_link: "https://sloai.org/"
 address: "Kongresni trg 3"
 city: "Ljubljana"
 country: "Slovenia"

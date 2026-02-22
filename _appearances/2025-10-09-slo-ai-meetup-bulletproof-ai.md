@@ -1,11 +1,12 @@
 ---
 layout: appearance
-title: "Building Bulletproof AI Applications: Lessons from Processing Billions of Tokens Daily"
+title: "SLO AI Meetup #5: Building Bulletproof AI Applications"
 date: 2025-10-09
-description: "Moderated the Slovenia AI Meetup featuring Tjaž Silovšek, CTO of Astra AI, who shared engineering realities of production AI systems handling provider outages, rate limits, and failures at scale."
+description: "Moderated the SLO AI featuring Tjaž Silovšek, CTO of Astra AI, who shared engineering realities of production AI systems handling provider outages, rate limits, and failures at scale."
 venue: "Sportradar d.o.o."
 venue_link: https://www.sportradar.com/
-organization: "Slovenia AI Meetup"
+organization: "SLO AI"
+organization_link: "https://sloai.org/"
 address: "Litostrojska Cesta 52a"
 city: "Ljubljana"
 country: "Slovenia"
@@ -45,5 +46,5 @@ This event was ideal for engineers, developers, CTOs, and technical leads workin
 18:00 - 19:00 - Building Bulletproof AI Applications: Lessons from Processing Billions of Tokens Daily  
 19:00 - 20:00 - Q&A and networking
 
-This event was organized by Slovenia AI Meetup and represents our commitment to bringing practical AI expertise to Slovenia's growing tech community.
+This event was organized by SLO AI and represents our commitment to bringing practical AI expertise to Slovenia's growing tech community.
 

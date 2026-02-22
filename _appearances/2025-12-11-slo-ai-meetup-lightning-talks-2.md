@@ -1,18 +1,19 @@
 ---
 layout: appearance
-title: "SLO AI Meetup: Lightning Talks #2"
+title: "SLO AI Meetup #6: Lightning Talks"
 date: 2025-12-11
-description: "Co-organized, moderated, and coached speakers for the 2nd Slovenia AI Meetup Lightning Talks event featuring multiple short presentations on AI topics."
+description: "Co-organized, moderated, and coached speakers for the SLO AI Meetup #2 Lightning Talks event featuring multiple short presentations on AI topics."
 venue: "Ljubljana.tech"
 venue_link: https://ljubljana.tech/
 organization: "SLO AI"
+organization_link: "https://sloai.org/"
 city: "Ljubljana"
 country: "Slovenia"
 lang: en
 role: "Co-organizer, Moderator & Speaker Coach"
 ---
 
-Co-organized, moderated, and coached speakers for the 2nd Slovenia AI Meetup Lightning Talks event. This format allows multiple speakers to share insights on AI topics in short, focused presentations, creating a diverse and engaging evening of AI discussions.
+Co-organized, moderated, and coached speakers for the SLO AI Meetup #2 Lightning Talks event. This format allows multiple speakers to share insights on AI topics in short, focused presentations, creating a diverse and engaging evening of AI discussions.
 
 ## About Lightning Talks
 
@@ -24,5 +25,5 @@ Lightning Talks provide a platform for multiple speakers to present on various A
 **Format:** Lightning Talks (multiple short presentations)  
 **Location:** Ljubljana.tech, BTC, Ljubljana, Slovenia
 
-This event is organized by Slovenia AI Meetup and represents our commitment to bringing practical AI expertise to Slovenia's growing tech community.
+This event is organized by SLO AI and represents our commitment to bringing practical AI expertise to Slovenia's growing tech community.
 

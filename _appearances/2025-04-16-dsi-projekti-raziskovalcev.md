@@ -6,6 +6,7 @@ description: "Moderiranje sekcije na konferenci Dnevi Slovenske Informatike (DSI
 venue: "Kongresni center Bernardin"
 venue_link: "https://www.hoteli-bernardin.si/sl/kongresi"
 organization: "Slovensko društvo informatika (DSI 2025)"
+organization_link: "https://www.drustvo-informatika.si"
 address: "Obala 2"
 city: "Portorož"
 country: "Slovenia"
@@ -16,7 +17,7 @@ role: "Moderator"
 
 Vodja sekcije "Projekti raziskovalcev" na konferenci Dnevi slovenske informatike 2025. Sekcija je vključevala:
 
-*   Sejem s stojnicami podjetij.
-*   Predstavitve prebojnih projektov in idej raziskovalcev iz različnih institucij (IJS, UM FERI, UL FRI, UL FE).
+- Sejem s stojnicami podjetij.
+- Predstavitve prebojnih projektov in idej raziskovalcev iz različnih institucij (IJS, UM FERI, UL FRI, UL FE).
 
-Cilj sekcije je bil povezovanje raziskovalne sfere z gospodarstvom in javno upravo ter predstavitev inovativnih projektov širši javnosti. 
+Cilj sekcije je bil povezovanje raziskovalne sfere z gospodarstvom in javno upravo ter predstavitev inovativnih projektov širši javnosti.

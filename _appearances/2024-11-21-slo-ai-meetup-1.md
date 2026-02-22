@@ -1,11 +1,12 @@
 ---
 layout: appearance
-title: "1st Slo AI Meetup: How Large Language Models Transform Audio Understanding"
+title: "SLO AI Meetup #1: How Large Language Models Transform Audio Understanding"
 date: 2024-11-21
-description: "Co-organized the 1st Slovenia AI Meetup featuring Dominik Roblek, an ex-Googler and pioneer in audio AI, exploring the transformation of audio understanding through LLMs."
+description: "Co-organized the SLO AI Meetup #1 featuring Dominik Roblek, an ex-Googler and pioneer in audio AI, exploring the transformation of audio understanding through LLMs."
 venue: "Sportradar Ljubljana"
 venue_link: https://www.sportradar.com/
-organization: "Slovenia AI Meetup"
+organization: "SLO AI"
+organization_link: "https://sloai.org/"
 address: "Litostrojska Cesta 52a"
 city: "Ljubljana"
 country: "Slovenia"
