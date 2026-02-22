@@ -115,7 +115,7 @@ description: Blog, Videos, Articles, and Podcast
       {% assign thumb_url = episode.links.buzzsprout | default: '' %}
       <div id="{{ episode.title | slugify }}"
            class="item-row item-row-media"
-           data-fetch-thumb="{{ thumb_url }}">
+           {% unless episode.image %}data-fetch-thumb="{{ thumb_url }}"{% endunless %}>
         <a href="{{ thumb_url }}" target="_blank" rel="noopener"
            class="item-thumb-wrap item-thumb-square" tabindex="-1" aria-hidden="true">
           <img class="item-thumb"

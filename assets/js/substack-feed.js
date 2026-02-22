@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var settled = false;
   var fallbackTimer = setTimeout(function () {
     if (!settled) { settled = true; displayError(); }
-  }, 2000);
+  }, 7000);
 
   fetch(proxyUrl)
     .then(function (r) {
