@@ -3,6 +3,8 @@ title: Trivial Group
 role: Founder
 status: current
 order: 1
+image: "/assets/images/projects/trivial-group.png"
+image_style: contain
 start_date: 2025-01-01
 description: A boutique AI development and consulting company based in Slovenia. We help organizations unlock business value through robust, value-focused solutions and thoughtful technical execution.
 tags:

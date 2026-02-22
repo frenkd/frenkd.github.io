@@ -2,7 +2,9 @@
 title: SEOS AI
 role: AI Lecturer & Consultant
 status: current
-order: 2
+order: 3
+image: "/assets/images/projects/seos-ai.png"
+image_style: contain
 start_date: 2026-01-01
 description: AI education and training for Slovenian companies — practical workshops on ChatGPT, Copilot for Business, and deploying AI across real workflows.
 tags:

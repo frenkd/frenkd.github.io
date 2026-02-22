@@ -1,6 +1,7 @@
 ---
 title: "Onkraj ChatGPT: Uporabna orodja in praktični primeri umetne inteligence"
 date: 2024-09-11
+image: "/assets/images/articles/onkraj-chatgpt.jpg"
 category: finance
 subcategory: "Moje Finance"
 publication: "Moje Finance"

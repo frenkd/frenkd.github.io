@@ -2,7 +2,9 @@
 title: ASEF Podcast
 role: Host & Head of Production
 status: current
-order: 3
+order: 4
+image: "/assets/images/projects/asef-podcast.png"
+image_style: contain
 start_date: 2023-09-01
 description: Hosting a podcast featuring conversations with Slovenian researchers and professionals from various fields, exploring their work and insights.
 tags:

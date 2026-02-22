@@ -2,6 +2,7 @@
 layout: episode
 title: "Episode #35: Tech for Nature with Tom Vodopivec from Bird Buddy/Wonder"
 date: 2025-04-02
+image: "/assets/images/episodes/ep35-tech-for-nature.png"
 description: "In this episode of the ASEF Podcast, we explore the journey of Bird Buddy/Wonder, a Slovenian startup that has successfully blended AI, computer vision, and hardware to create a smart bird feeder loved by over half a million people worldwide. Joining us is Tom Vodopivec, COO at Bird Buddy/Wonder, who brings deep expertise in AI, startups, and venture capital."
 links:
   spotify: https://open.spotify.com/episode/7HYLmQWxa19pi3Sx0CmeaQ

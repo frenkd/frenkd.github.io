@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const recentContentItems = document.getElementById('recent-content-items');
     const loadingElement = document.getElementById('recent-content-loading');
-    if (!recentContentItems || !loadingElement) return;
+    if (!recentContentItems) return;
 
     // Get Substack URL if available
     const substackUrl = recentContentContainer.getAttribute('data-substack-url');
@@ -12,22 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get YouTube channel ID if available
     const youtubeChannelId = recentContentContainer.getAttribute('data-youtube-channel-id');
     
-    // Collect all static content items
+    // Collect all static content items (container is hidden via display:none,
+    // so items are invisible until displayContent() swaps skeleton ↔ content)
     const contentItems = [];
-    
-    // Parse and store static content items
+
     document.querySelectorAll('.content-item').forEach(item => {
         const dateAttr = item.getAttribute('data-date');
         if (dateAttr) {
             const date = new Date(dateAttr);
-            contentItems.push({
-                element: item,
-                date: date,
-                timestamp: date.getTime()
-            });
-            
-            // Hide the original items, we'll reinsert them later
-            item.style.display = 'none';
+            contentItems.push({ element: item, date: date, timestamp: date.getTime() });
         }
     });
     
@@ -54,19 +47,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add "View all" link if we have content
         if (recentItems.length > 0) {
             const viewAllContainer = document.createElement('div');
-            viewAllContainer.className = 'pt-2 text-center';
+            viewAllContainer.className = 'view-all-row';
             
             const viewAllLink = document.createElement('a');
             viewAllLink.href = '/publications';
-            viewAllLink.className = 'text-sm text-blue-600 font-medium hover:underline';
-            viewAllLink.textContent = 'View all content →';
+            viewAllLink.className = 'item-link-muted';
+            viewAllLink.style.fontSize = '.8125rem';
+            viewAllLink.textContent = 'View all →';
             
             viewAllContainer.appendChild(viewAllLink);
             recentContentItems.appendChild(viewAllContainer);
         }
         
-        // Hide loading spinner
+        // Swap: hide skeleton, show real content
         loadingElement.style.display = 'none';
+        recentContentItems.style.display = '';
     }
     
     // Counter for pending requests
@@ -90,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const blogPosts = data.items.map(post => {
                         // Create element for blog post
                         const postElement = document.createElement('div');
-                        postElement.className = 'bg-white p-5 rounded-lg shadow-md content-item';
+                        postElement.className = 'item-row content-item';
                         
                         // Date display
                         const postDate = new Date(post.pubDate);
@@ -102,9 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         // Content for the post
                         postElement.innerHTML = `
-                            <span class="text-sm text-gray-500 block mb-1">Blog • ${formattedDate}</span>
-                            <h3 class="font-semibold text-lg mb-2">${post.title}</h3>
-                            <a href="${post.link}" target="_blank" class="text-blue-600 text-sm inline-block hover:underline">Read post →</a>
+                            <div class="item-header">
+                              <span class="item-title">${post.title}</span>
+                              <span class="item-meta">${postDate.toLocaleDateString('en-US', {month:'short', year:'numeric'})}</span>
+                            </div>
+                            <div class="item-role">Blog</div>
+                            <a href="${post.link}" target="_blank" class="item-link" style="font-size:.8125rem">Read post →</a>
                         `;
                         
                         return {
@@ -152,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const videos = data.items.map(video => {
                         // Create element for video
                         const videoElement = document.createElement('div');
-                        videoElement.className = 'bg-white p-5 rounded-lg shadow-md content-item';
+                        videoElement.className = 'item-row content-item';
                         
                         // Date display
                         const videoDate = new Date(video.pubDate);
@@ -164,9 +162,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         // Content for the video
                         videoElement.innerHTML = `
-                            <span class="text-sm text-gray-500 block mb-1">YouTube • ${formattedDate}</span>
-                            <h3 class="font-semibold text-lg mb-2">${video.title}</h3>
-                            <a href="${video.link}" target="_blank" class="text-red-600 text-sm inline-block hover:underline">Watch video →</a>
+                            <div class="item-header">
+                              <span class="item-title">${video.title}</span>
+                              <span class="item-meta">${videoDate.toLocaleDateString('en-US', {month:'short', year:'numeric'})}</span>
+                            </div>
+                            <div class="item-role">YouTube</div>
+                            <a href="${video.link}" target="_blank" class="item-link" style="font-size:.8125rem">Watch video →</a>
                         `;
                         
                         return {

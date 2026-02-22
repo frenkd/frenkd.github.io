@@ -4,50 +4,35 @@ title: Appearances
 description: Talks, Panels, and Media Appearances
 ---
 
-<div class="container mx-auto px-4 py-8">
-  <h1 class="text-4xl font-bold mb-8">Appearances</h1>
-  
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="page-content">
+  <h1 class="page-title">Appearances</h1>
+
+  <div class="item-list">
     {% if site.appearances.size > 0 %}
       {% assign sorted_appearances = site.appearances | sort: "date" | reverse %}
       {% for appearance in sorted_appearances %}
-      <div id="{{ appearance.title | slugify }}" class="bg-white p-6 rounded-lg shadow-md" data-event-date="{{ appearance.date }}">
-        <div class="flex justify-between items-start mb-2" data-upcoming-container>
-          <p class="text-gray-500">{{ appearance.date | date: "%B %d, %Y" }}</p>
-          <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded upcoming-badge" data-upcoming-badge style="display: none;">Upcoming</span>
+      <div id="{{ appearance.title | slugify }}" class="item-row" data-event-date="{{ appearance.date }}">
+        <div class="item-header" data-upcoming-container>
+          <span class="item-title">{{ appearance.title }}</span>
+          <span class="item-meta">
+            {{ appearance.date | date: "%b %d, %Y" }}
+            <span class="badge badge-green upcoming-badge" data-upcoming-badge style="display:none;margin-left:.35rem">Upcoming</span>
+          </span>
         </div>
-        
-        <h3 class="text-xl font-semibold mb-1">{{ appearance.title }}</h3>
-        
-        {% if appearance.venue %}
-          <p class="text-gray-600 mb-2">
-            {% if appearance.venue_link %}
-              <a href="{{ appearance.venue_link }}" target="_blank" class="hover:underline">{{ appearance.venue }}</a>
-            {% else %}
-              {{ appearance.venue }}
-            {% endif %}
-            {% if appearance.city %}, {{ appearance.city }}{% endif %}
-          </p>
-        {% elsif appearance.location %}
-          <p class="text-gray-600 mb-2">{{ appearance.location }}</p>
+
+        {% if appearance.venue or appearance.location %}
+        <div class="item-role">{% if appearance.venue %}{% if appearance.venue_link %}<a href="{{ appearance.venue_link }}" target="_blank" rel="noopener" style="color:var(--text-muted);border-bottom:1px solid var(--border-hover)">{{ appearance.venue }}</a>{% else %}{{ appearance.venue }}{% endif %}{% if appearance.city %}, {{ appearance.city }}{% endif %}{% elsif appearance.location %}{{ appearance.location }}{% endif %}{% if appearance.organization %} &middot; {{ appearance.organization }}{% endif %}</div>
         {% endif %}
-        
-        {% if appearance.organization %}
-        <p class="text-gray-600 text-sm italic mb-2">{{ appearance.organization }}</p>
-        {% endif %}
-        
-        <p class="text-gray-600 mb-4">{{ appearance.description }}</p>
-        
-        
+
+        <p class="item-desc">{{ appearance.description }}</p>
+
         {% if appearance.url %}
-        <a href="{{ appearance.url }}" class="text-blue-600 inline-block hover:underline">Event details →</a>
+        <a href="{{ appearance.url }}" class="item-link" style="font-size:.8125rem">Event details →</a>
         {% endif %}
       </div>
       {% endfor %}
     {% else %}
-      <div class="bg-white p-6 rounded-lg shadow-md col-span-full">
-        <p class="text-gray-600">No appearances available yet. Check back soon!</p>
-      </div>
+      <p style="color:var(--text-faint);font-size:.875rem">No appearances yet.</p>
     {% endif %}
   </div>
-</div> 
+</div>

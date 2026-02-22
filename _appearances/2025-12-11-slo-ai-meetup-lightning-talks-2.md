@@ -4,6 +4,7 @@ title: "SLO AI Meetup: Lightning Talks #2"
 date: 2025-12-11
 description: "Co-organized, moderated, and coached speakers for the 2nd Slovenia AI Meetup Lightning Talks event featuring multiple short presentations on AI topics."
 venue: "Ljubljana.tech"
+venue_link: https://ljubljana.tech/
 organization: "SLO AI"
 city: "Ljubljana"
 country: "Slovenia"

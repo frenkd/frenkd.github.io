@@ -6,6 +6,7 @@ category: "finance"
 subcategory: "Finance Manager"
 publication: "Finance Manager"
 date: 2025-04-24
+image: "/assets/images/articles/marko-grobelnik-ijs.jpg"
 external_url: https://www.finance.si/manager/intervju-marko-grobelnik-ijs-ne-mistificirajte-ui-razmisljajte-kriticno-in-izkoristite-ga/a/9033948
 source: Finance Manager
 lang: sl

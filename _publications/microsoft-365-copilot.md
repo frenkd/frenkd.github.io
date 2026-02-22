@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 Copilot pod drobnogledom: se ta pisarniška UI-rešitev splača ali ne?"
 date: 2025-01-11
+image: "/assets/images/articles/microsoft-365-copilot.jpg"
 category: finance
 subcategory: "Moje Finance"
 publication: "Moje Finance"

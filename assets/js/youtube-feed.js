@@ -35,41 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
     container.innerHTML = '';
 
     if (!videos || videos.length === 0) {
-      container.innerHTML = '<div class="bg-white p-6 rounded-lg shadow-md col-span-2"><p class="text-gray-600">No videos available yet. Check back soon!</p></div>';
+      container.innerHTML = '<p style="color:var(--text-faint);font-size:.875rem">No videos available yet.</p>';
       return;
     }
 
     videos.slice(0, 4).forEach(video => {
       try {
         const date = new Date(video.pubDate);
-        const formattedDate = date.toLocaleDateString('en-US', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        });
+        const shortDate = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        const videoId = extractVideoId(video.link);
+        const thumbUrl = videoId
+          ? `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`
+          : (video.thumbnail || '');
 
         const videoElement = document.createElement('div');
-        videoElement.className = 'bg-white p-6 rounded-lg shadow-md flex flex-col';
-        
-        // Extract video ID from link
-        const videoId = extractVideoId(video.link);
-        
+        videoElement.className = 'item-row item-row-media';
+
         videoElement.innerHTML = `
-          <div class="relative pb-[56.25%] mb-4 rounded overflow-hidden">
-            <img src="${video.thumbnail || `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`}" 
-                 alt="${video.title}" 
-                 class="absolute inset-0 w-full h-full object-cover" 
-                 loading="lazy" />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <svg class="w-16 h-16 text-red-600 opacity-80" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+          <a href="${video.link}" target="_blank" rel="noopener" class="item-thumb-wrap" tabindex="-1" aria-hidden="true">
+            <img
+              class="item-thumb"
+              src="${thumbUrl}"
+              alt=""
+              width="96"
+              height="54"
+              loading="lazy"
+              decoding="async"
+              onload="this.setAttribute('data-loaded','1')"
+            >
+          </a>
+          <div class="item-thumb-body">
+            <div class="item-header">
+              <span class="item-title">${video.title || 'Untitled Video'}</span>
+              <span class="item-meta">${shortDate}</span>
             </div>
-            <a href="${video.link}" class="absolute inset-0" target="_blank" aria-label="Play video"></a>
+            <a href="${video.link}" class="item-link" style="font-size:.8125rem" target="_blank">Watch video →</a>
           </div>
-          <span class="text-sm text-gray-500">YouTube • ${formattedDate}</span>
-          <h3 class="text-xl font-semibold my-2">${video.title || 'Untitled Video'}</h3>
-          <a href="${video.link}" class="text-red-600 mt-auto" target="_blank">Watch video →</a>
         `;
         container.appendChild(videoElement);
       } catch (error) {
@@ -83,11 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('youtube-videos');
     if (!container) return;
     
-    container.innerHTML = `
-      <div class="bg-white p-6 rounded-lg shadow-md col-span-2">
-        <p class="text-gray-600">${message}. <a href="https://www.youtube.com/channel/${channelId}" class="text-red-600" target="_blank">Visit YouTube Channel</a> to see the latest videos.</p>
-      </div>
-    `;
+    container.innerHTML = `<p style="color:var(--text-faint);font-size:.875rem">${message}. <a href="https://www.youtube.com/channel/${channelId}" style="color:var(--accent)" target="_blank">Visit YouTube ↗</a></p>`;
   }
 
   // Helper function to extract video ID from YouTube URL

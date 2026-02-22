@@ -3,7 +3,9 @@ title: DSI Conference
 role: Program Committee Member
 status: current
 start_date: 2024-11-01
-order: 4
+order: 5
+image: "/assets/images/projects/dsi-conference.png"
+image_style: contain
 website: https://dsi2025.dsi-konferenca.si/
 description: Leading the research showcase at 32nd Slovenian Information Society conference, connecting academic research with industry applications, while serving on the program committee to shape the conference's direction.
 tags:

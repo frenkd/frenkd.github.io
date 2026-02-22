@@ -1,6 +1,7 @@
 ---
 title: "AI-agenti na pohodu: kako OpenAI Operator, Deep Research in drugi krojijo prihodnost avtomatizacije"
 date: 2025-03-05
+image: "/assets/images/articles/ai-agenti-na-pohodu.jpg"
 category: finance
 subcategory: "Moje Finance"
 publication: "Moje Finance"

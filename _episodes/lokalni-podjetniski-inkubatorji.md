@@ -5,7 +5,7 @@ episode_number: 42
 season: 4
 duration: "58:03"
 description: "V tej epizodi se podajamo v svet podjetniških inkubatorjev in podpornega okolja za startupe. V gosteh sta bili Nives Justin, vodja podjetniškega inkubatorja Kovačnica v Kranju, in Sonja Majcen, ki vodi Inkubator Savinjske regije v Celju."
-image: "/assets/images/episodes/ep42-lokalni-inkubatorji.jpg"
+image: "/assets/images/episodes/ep42-lokalni-inkubatorji.png"
 links:
   buzzsprout: "https://www.buzzsprout.com/1753090/episodes/17462601-epizoda-42-slo-lokalni-podjetniski-inkubatorji-v-sloveniji"
   spotify: "https://open.spotify.com/episode/7tC3gBjciuBX7EHv0kHp4J?si=xjThrdB2RiSDqehz3-XD6A"
