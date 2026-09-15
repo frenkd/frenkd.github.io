@@ -6,6 +6,8 @@ episode_number: 60
 season: 5
 duration: "01:11:24"
 description: "Posebna videoepizoda ASEF Podcasta: pogovor s prof. dr. Ivanom Bratkom o začetkih umetne inteligence v Sloveniji, Ljubljanski šoli AI in o tem, kam gre področje danes."
+featured: true
+recent_title: "Ivan Bratko: UI nekdaj in danes"
 image: "/assets/images/episodes/ep60-ivan-bratko.jpg"
 links:
   youtube: "https://www.youtube.com/watch?v=38AFS8d1Esk"

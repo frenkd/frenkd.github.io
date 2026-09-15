@@ -28,9 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayContent(items) {
         // Sort by date (newest first)
         items.sort((a, b) => b.timestamp - a.timestamp);
-        
-        // Only show the 5 most recent items
-        const recentItems = items.slice(0, 5);
+
+        let recentItems = items.slice(0, 5);
+        const featured = items.filter(item => item.element.getAttribute('data-featured') === 'true');
+        featured.forEach(item => {
+            if (!recentItems.includes(item)) {
+                recentItems.pop();
+                recentItems.push(item);
+                recentItems.sort((a, b) => b.timestamp - a.timestamp);
+            }
+        });
         
         // Remove all existing content
         while (recentContentItems.firstChild) {

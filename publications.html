@@ -128,7 +128,7 @@ description: Blog, Videos, Articles, and Podcast
         <div class="item-thumb-body">
           <div class="item-header">
             <span class="item-title">{{ episode.title }}</span>
-            <span class="item-meta">S{{ episode.season }}E{{ episode.episode_number }} &middot; {{ episode.date | date: "%b %Y" }}{% if episode.links.youtube %} &middot; Video{% endif %}</span>
+            <span class="item-meta">S{{ episode.season }}E{{ episode.episode_number }} &middot; {{ episode.date | date: "%b %Y" }}{% if episode.featured %} &middot; Special{% elsif episode.links.youtube %} &middot; Video{% endif %}</span>
           </div>
           <p class="item-desc">{{ episode.description }}</p>
           <div class="item-actions">

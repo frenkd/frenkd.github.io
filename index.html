@@ -105,7 +105,7 @@ description: AI Engineer & Tech Writer | Consulting and Development
 
   <!-- Recent (sidebar on desktop) -->
   <div class="home-sidebar">
-  <section id="recent-content" data-substack-url="{{ site.substack_url }}" data-youtube-channel-id="{{ site.youtube_channel_id }}">
+  <section id="recent-content" data-substack-url="{{ site.substack_url }}">
     <h2 class="section-label">Recent</h2>
 
     <!-- Skeleton placeholders hold layout while JS fetches & sorts content -->
@@ -168,10 +168,13 @@ description: AI Engineer & Tech Writer | Consulting and Development
 
       {% assign recent_episodes = site.episodes | sort: "date" | reverse %}
       {% for episode in recent_episodes %}
-      <div class="item-row content-item" data-date="{{ episode.date | date_to_xmlschema }}">
+      <div class="item-row content-item" data-date="{{ episode.date | date_to_xmlschema }}"{% if episode.featured %} data-featured="true"{% endif %}>
         <div class="item-header">
-          <span class="item-title">{{ episode.title | truncate: 70 }}</span>
-          <span class="item-meta">{{ episode.date | date: "%b %Y" }}</span>
+          <span class="item-title">{{ episode.recent_title | default: episode.title | truncate: 70 }}</span>
+          <span class="item-meta">
+            {{ episode.date | date: "%b %Y" }}
+            {% if episode.featured %}<span class="badge badge-blue" style="margin-left:.35rem">Special</span>{% endif %}
+          </span>
         </div>
         <div class="item-role">ASEF Podcast{% if episode.links.youtube %} · Video{% endif %}</div>
         {% if episode.links.youtube %}

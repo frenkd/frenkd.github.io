@@ -27,4 +27,4 @@ The ASEF Podcast is an interview series produced in collaboration with the Ameri
 
 ## Featured Guests
 
-The podcast has featured numerous distinguished guests, including professors from top universities, industry leaders, and ASEF Fellows who share their experiences and insights into cutting-edge research, academic life, and career development.
+Recent guests include prof. dr. Ivan Bratko, in a special video episode on the beginnings of AI research in Slovenia, as well as professors from top universities, industry leaders, and ASEF Fellows.
