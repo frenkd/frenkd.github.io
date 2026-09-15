@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Sort by date (newest first)
         items.sort((a, b) => b.timestamp - a.timestamp);
         
-        // Only show the 3 most recent items
-        const recentItems = items.slice(0, 3);
+        // Only show the 5 most recent items
+        const recentItems = items.slice(0, 5);
         
         // Remove all existing content
         while (recentContentItems.firstChild) {

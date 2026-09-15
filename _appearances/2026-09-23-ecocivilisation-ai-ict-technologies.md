@@ -4,7 +4,7 @@ title: "AI and ICT Technologies Challenged"
 date: 2026-09-23
 description: "Co-moderating the mini-conference on AI and ICT technologies in Ecocivilisation Earth's 2026 AI Challenged series, a virtual session with Ekaterina Matveeva."
 venue: "Online (Zoom)"
-organization: "Ecocivilisation Earth"
+organization: "Ecocivilisation"
 organization_link: "https://www.ecocivilisation.earth/"
 link: "https://www.ecocivilisation.earth/ai-challenged/"
 lang: en

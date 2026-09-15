@@ -21,6 +21,12 @@ layout: default
         </a>
         {% endif %}
         
+        {% if page.links.youtube %}
+        <a href="{{ page.links.youtube }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors">
+          <span>Watch on YouTube</span>
+        </a>
+        {% endif %}
+
         {% if page.links.spotify %}
         <a href="{{ page.links.spotify }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
           <span>Spotify</span>

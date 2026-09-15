@@ -5,7 +5,7 @@ date: 2026-09-22
 description: "A talk at NT Conference 2026 on lessons from using AI across client work, from coding assistants and project ops to letting clients vibecode features without breaking production."
 venue: "Grand Hotel Bernardin"
 venue_link: https://www.ntk.si/
-organization: "NT Conference"
+organization: "NTK"
 organization_link: "https://www.ntk.si/"
 address: "Obala 2"
 city: "Portorož"

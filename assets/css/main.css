@@ -862,6 +862,7 @@ nav.site-nav .nav-link.active {
 .platform-link.buzzsprout { color: var(--accent); }
 .platform-link.spotify    { color: var(--green); }
 .platform-link.apple      { color: var(--purple); }
+.platform-link.youtube    { color: var(--red); }
 
 /* ==============================================
    Media Item (with thumbnail)
@@ -1128,7 +1129,7 @@ nav.site-nav .nav-link.active {
 @media (min-width: 768px) {
   .home-grid {
     display: grid;
-    grid-template-columns: 1fr 260px;
+    grid-template-columns: 1fr 280px;
     gap: 3.5rem;
     align-items: start;
   }

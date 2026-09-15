@@ -134,9 +134,25 @@ description: AI Engineer & Tech Writer | Consulting and Development
         <div class="item-role"><span class="skel-line" style="display:inline-block;width:80px;height:10px"></span></div>
         <span class="skel-line" style="display:inline-block;width:40px;height:10px;margin-top:.3rem"></span>
       </div>
+      <div class="item-row skel-row">
+        <div class="item-header">
+          <span class="item-title"><span class="skel-line skel-title-line" style="width:80%"></span><span class="skel-line skel-title-line" style="width:48%"></span></span>
+          <span class="item-meta"><span class="skel-line" style="display:inline-block;width:38px;height:10px"></span></span>
+        </div>
+        <div class="item-role"><span class="skel-line" style="display:inline-block;width:90px;height:10px"></span></div>
+        <span class="skel-line" style="display:inline-block;width:42px;height:10px;margin-top:.3rem"></span>
+      </div>
+      <div class="item-row skel-row">
+        <div class="item-header">
+          <span class="item-title"><span class="skel-line skel-title-line" style="width:70%"></span><span class="skel-line skel-title-line" style="width:58%"></span></span>
+          <span class="item-meta"><span class="skel-line" style="display:inline-block;width:36px;height:10px"></span></span>
+        </div>
+        <div class="item-role"><span class="skel-line" style="display:inline-block;width:68px;height:10px"></span></div>
+        <span class="skel-line" style="display:inline-block;width:38px;height:10px;margin-top:.3rem"></span>
+      </div>
     </div>
 
-    <!-- Static items (hidden until JS sorts & surfaces top 3) -->
+    <!-- Static items (hidden until JS sorts & surfaces top 5) -->
     <div id="recent-content-items" class="item-list" style="display:none">
       {% assign recent_publications = site.publications | sort: "date" | reverse %}
       {% for pub in recent_publications %}
@@ -157,8 +173,12 @@ description: AI Engineer & Tech Writer | Consulting and Development
           <span class="item-title">{{ episode.title | truncate: 70 }}</span>
           <span class="item-meta">{{ episode.date | date: "%b %Y" }}</span>
         </div>
-        <div class="item-role">ASEF Podcast</div>
+        <div class="item-role">ASEF Podcast{% if episode.links.youtube %} · Video{% endif %}</div>
+        {% if episode.links.youtube %}
+        <a href="{{ episode.links.youtube }}" target="_blank" rel="noopener" class="item-link" style="font-size:.8125rem">Watch →</a>
+        {% else %}
         <a href="/publications#{{ episode.title | slugify }}" class="item-link" style="font-size:.8125rem">Listen →</a>
+        {% endif %}
       </div>
       {% endfor %}
 
@@ -172,7 +192,7 @@ description: AI Engineer & Tech Writer | Consulting and Development
             <span class="badge badge-green upcoming-badge" data-upcoming-badge style="display:none;margin-left:.35rem">Upcoming</span>
           </span>
         </div>
-        <div class="item-role">Appearance</div>
+        <div class="item-role">{{ appearance.organization | default: appearance.venue | default: "Appearance" }}</div>
         <a href="/appearances#{{ appearance.title | slugify }}" class="item-link" style="font-size:.8125rem">View →</a>
       </div>
       {% endfor %}

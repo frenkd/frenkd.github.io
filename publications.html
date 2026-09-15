@@ -128,13 +128,13 @@ description: Blog, Videos, Articles, and Podcast
         <div class="item-thumb-body">
           <div class="item-header">
             <span class="item-title">{{ episode.title }}</span>
-            <span class="item-meta">S{{ episode.season }}E{{ episode.episode_number }} &middot; {{ episode.date | date: "%b %Y" }}</span>
+            <span class="item-meta">S{{ episode.season }}E{{ episode.episode_number }} &middot; {{ episode.date | date: "%b %Y" }}{% if episode.links.youtube %} &middot; Video{% endif %}</span>
           </div>
           <p class="item-desc">{{ episode.description }}</p>
           <div class="item-actions">
-            {% if episode.links.buzzsprout %}
-            <a href="{{ episode.links.buzzsprout }}" target="_blank" rel="noopener" class="platform-link buzzsprout" style="font-size:.8125rem">
-              Buzzsprout
+            {% if episode.links.youtube %}
+            <a href="{{ episode.links.youtube }}" target="_blank" rel="noopener" class="platform-link youtube" style="font-size:.8125rem">
+              YouTube
               <svg width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
             {% endif %}
@@ -147,6 +147,12 @@ description: Blog, Videos, Articles, and Podcast
             {% if episode.links.apple %}
             <a href="{{ episode.links.apple }}" target="_blank" rel="noopener" class="platform-link apple" style="font-size:.8125rem">
               Apple Podcasts
+              <svg width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            {% endif %}
+            {% if episode.links.buzzsprout %}
+            <a href="{{ episode.links.buzzsprout }}" target="_blank" rel="noopener" class="platform-link buzzsprout" style="font-size:.8125rem">
+              Buzzsprout
               <svg width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
             {% endif %}
