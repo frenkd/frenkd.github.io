@@ -4,7 +4,6 @@ role: Founding Member
 status: current
 order: 2
 image: "/assets/images/projects/slo-ai.png"
-image_style: contain
 start_date: 2024-11-10
 description: Building the Slovenian AI community — meetups, events, and collaborative initiatives connecting AI practitioners, researchers, and industry across Slovenia.
 tags:
